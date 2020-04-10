@@ -1,6 +1,6 @@
-## Project 2 - Food 
+## Project 2 - Festival 
 
-With developer Johanna, David and Pierre.
+With developer Mathilde, Thomas L. and Benoît.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
