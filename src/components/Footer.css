@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.Footer {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    background-color: #9185be;
+    justify-content: space-around;
+    border-radius: 15px;
+    
+
+}
+.footer-content2, .footer-content3 {
+    margin: 10px;
+    text-align: left;
+    
+}
+.footer-input {
+
+    border-radius: 20px;
+    padding: 10px;
+}
+.club-button {
+
+
+    background-color: #f9b256;
+    color: white;
+    border-radius: 20px;
+    appearance: none;
+    
+    cursor: pointer;
+    margin-left: -65px;
+
+}
+.club-button:hover {
+    color: orange;
+    background-color: #9185be;
+    border-radius: 20px;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+img {
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.footer-content1 {
+    background-color: #f9b256;
+    display: flex;
+    align-items: center;
+    margin-left: -51px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    
+    
+}
+.footer-logo {
+
+padding: 50px;
+width: 120px;
+height: 120px;
+  
+}
+.send{
+
+    
+}
