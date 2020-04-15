@@ -1,6 +1,6 @@
-## Project 2 - Food 
+## Project 2 - Fest It 
 
-With developer Johanna, David and Pierre.
+With The Jackson three alias Benoit, Mathilde and Thomas.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
