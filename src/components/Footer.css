@@ -39,9 +39,9 @@ body {
 }
 .club-button:hover {
     color: orange;
-    background-color: #9185be;
+    /*background-color: #9185be;*/
     border-radius: 20px;
-    transition: all 300ms;
+    /*transition: all 300ms;*/
     cursor: pointer;
 }
 
@@ -67,8 +67,4 @@ padding: 50px;
 width: 120px;
 height: 120px;
   
-}
-.send{
-
-    
 }
