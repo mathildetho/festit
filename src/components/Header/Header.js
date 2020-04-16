@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import Burger from "./Burger";
 import Menu from './Menu';
 
@@ -18,8 +18,8 @@ const useOnClickOutside = (ref, handler) => {
   };
 
 const Header = () => {
-    const [open, setOpen] = React.useState(false);
-    const node = React.useRef();
+    const [open, setOpen] = useState(false);
+    const node = useRef();
     useOnClickOutside(node, () => setOpen(false));
     return (
       <div>

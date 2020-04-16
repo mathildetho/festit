@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import "./Burger.css";
+import logo from '../../img/logoFestIt.png';
+
 
 const StyledBurger = styled.button`
-  div {
-    background: ${({ open }) => (open ? "#f9b256" : "#FFF")};
+  .trait {
+    background: ${({ open }) => (open ? "#fff" : "#fff")};
     :first-child {
       transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
     }
@@ -22,11 +24,14 @@ const StyledBurger = styled.button`
 
 const Burger = ({ open, setOpen }) => {
   return (
-    <StyledBurger className="Burger" open={open} onClick={() => setOpen(!open)}>
-      <div />
-      <div />
-      <div />
-    </StyledBurger>
+    <div className="mobile">
+      <a className='logoBurger' href="#"><img className='logo' src={logo} alt='logo Fest It' /></a>
+      <StyledBurger className="Burger" open={open} onClick={() => setOpen(!open)}>
+        <div className="trait" />
+        <div className="trait" />
+        <div className="trait" />
+      </StyledBurger>
+    </div>
   );
 };
 
