@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header/Header';
-import Slider from './components/Slider/Slider';
+import SliderList from './components/Slider/SliderList';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Slider />
+      <SliderList />
     </div>
   );
 }
