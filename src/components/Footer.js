@@ -38,9 +38,7 @@ class Footer extends React.Component {
                 <div className = "footer-content1">
                     <img className='footer-logo' src = { Logo } alt='footer logo'/>
                 </div>
-                <div className='white-bar'>
-                    
-                </div>
+               
                 <div className = "footer-content2">
                     <p>A propos</p>
                     <p>Mentions légales</p>
