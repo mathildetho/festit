@@ -8,22 +8,22 @@ class ArtistItem extends React.Component {
         super(props)
     }
     render() {
+        let img= this.props.image_url;
         return (
             <div className='ArtistItem-container'>
-                <div className='artist-card'>
+                <div className='artist-card'
+                     style={{ background: `center /cover no-repeat url('${img}')` }}>
+                
                     <div className= "card-title">
                         <img 
                             src={ Icon }
                             alt= "icon-titre"
-                            />
+                                />
                         <h5>{this.props.name}</h5>
                     </div>
-                    <img 
-                        src= {this.props.image_url}
-                        className= 'artist-image'
-                        alt= {this.props.name}
-                    />
                 </div>
+                    
+                
             </div>
     
         )
