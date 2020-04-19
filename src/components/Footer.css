@@ -42,13 +42,11 @@ body {
 }
 .club-button {
 
-    
+    cursor: pointer;    
     background-color: #f9b256;
     color: white;
     border-radius: 20px;
-    appearance: none;
     height: 43px;
-    cursor: pointer;
     padding-bottom: 40px;
     margin-left: -65px;
     outline: none;

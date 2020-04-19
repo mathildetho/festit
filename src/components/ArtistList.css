@@ -1,0 +1,11 @@
+.Artistlist {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.oneArtist-container {
+
+    display: flex;
+    flex-direction: row;
+}

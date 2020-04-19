@@ -1,0 +1,33 @@
+.ArtistItem-container {
+
+    display: flex;
+    
+    
+    /*align-items: center;*/
+}
+
+.artist-card {
+
+
+    width: 200px;
+    height: 200px;
+    background-color: #9185be;
+    padding: 15px;
+    margin: 10px;
+    align-items: center;
+    border-radius: 15px;
+    font-size: 20px;
+}
+
+.artist-image {
+
+    width: 100px;
+    height: 100px;
+    margin:auto;
+    border-radius: 50px;
+}
+
+.card-title {
+    display: flex;
+    flex-direction: row;
+}
