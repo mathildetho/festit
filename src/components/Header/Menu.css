@@ -1,11 +1,12 @@
 .Menu {
-    display: flex;
+    position: absolute;  
     justify-content: space-between;
     align-items: center;
     text-align: center;
     width:90%;
     margin: auto;
     margin-top: 0.5rem;
+    z-index:2;
   }
 
   .logo {
@@ -22,6 +23,7 @@
     justify-content: space-between;
     align-items: center;
     width:50%;
+    margin-right: 2rem;
   }
 
   li {
@@ -52,7 +54,7 @@
   .Nav {
     display: flex;
     justify-content: space-between;
-    width:100%;
+    width:100vw;
   }
   
   @media (max-width:850px) {

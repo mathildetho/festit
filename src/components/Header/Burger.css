@@ -28,6 +28,8 @@
     .mobile {
       display: flex;
       align-items: center;
+      position: absolute;
+      width:100vw;
     }
   
     .trait {
@@ -38,7 +40,8 @@
       transform-origin: 1px;
     }
     .logoBurger {
-      display:block
+      display:block;
+      z-index:2
     }
   }
   
