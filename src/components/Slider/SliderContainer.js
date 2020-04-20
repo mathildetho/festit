@@ -25,7 +25,7 @@ class SliderContainer extends React.Component {
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
-      autoplay: false,
+      autoplay: true,
       autoplaySpeed: 6500,
       speed:1300
     };
