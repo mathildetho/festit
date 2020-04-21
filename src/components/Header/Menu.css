@@ -45,7 +45,7 @@
     padding: 0.5rem 1rem;
   }
   
-  #title:hover {
+  #title:hover, .active-link {
     color: #f9b256;
     background-color: #fff;
     border-radius: 30px;
@@ -92,7 +92,7 @@
     .Nav {
       display: block;
     }
-    #title:hover {
+    #title:hover, .active-link{
       background: 0;
       border: 0;
       color: #fff;

@@ -28,7 +28,7 @@ function Menu({ open }) {
   return (
     <StyledMenu open={open} className="Menu">
       <nav className="Nav">
-        <NavLink activeClassName="active-link" id="logo" to="/Festivals"><img className="logo" src={logo} alt="logo Fest It" /></NavLink>
+        <NavLink id="logo" to="/Festivals"><img className="logo" src={logo} alt="logo Fest It" /></NavLink>
         <ul className="menu">
           <li>
           <li><NavLink activeClassName="active-link" id="title" to="/Festivals">Festivals</NavLink></li>

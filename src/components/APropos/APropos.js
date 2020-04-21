@@ -2,7 +2,8 @@ import React from 'react';
 import './APropos.css';
 
 import icon from '../../img/icon-titre.png';
-import AboutContainer from './About.';
+import AboutConcept from './AboutConcept';
+import AboutLineUp from './AboutLineUp';
 
 const APropos = () => {
     return (
@@ -12,7 +13,8 @@ const APropos = () => {
                     <img className='icon-title' src={icon} alt='icon'/>
                     <h2>À propos</h2>
                 </div>
-                <AboutContainer />
+                <AboutConcept />
+                <AboutLineUp />
             </div>
         </div>
     )
