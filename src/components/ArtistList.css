@@ -8,5 +8,14 @@
 
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 770px) {
+
+    .oneArtist-container {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
