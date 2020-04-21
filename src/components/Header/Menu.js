@@ -38,11 +38,7 @@ function Menu({ open }) {
               Artistes
             </a>
           </li>
-          <li>
-            <a id="title" href="#">
-              À propos
-            </a>
-          </li>
+          <li><NavLink activeClassName="active-link" id="title" to="/A-propos">À propos</NavLink></li>
           <li>
             <a href="#">
               <img

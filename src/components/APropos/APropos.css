@@ -1,0 +1,74 @@
+.apropos {
+    position: absolute;
+    width:100%;
+    height: 100%;
+    background-color:#9185be;
+    background-image: url('../../img/patternFestIt.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.apropos .icon-title {
+    width:4vw;
+    object-fit: contain;
+    margin-bottom: 3rem;
+}
+
+.container {
+    background-color: #f9b256;
+    width:80vw;
+    margin:auto;
+    border-radius: 30px;
+    margin-top: 8rem;
+}
+
+.title {
+    display: flex;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2em;
+}
+
+.aboutcard {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width:80%;
+    margin: auto;
+}
+
+.aboutcard h3 {
+    color: #fff;
+}
+
+.apropos .icon-card {
+    width:8vw;
+    object-fit: contain;
+}
+
+.cards {
+    display:flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.card {
+    width:30%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:#fff;
+}
+
+.title-card {
+    color:#fff;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+
+.desc {
+    margin:0;
+}
