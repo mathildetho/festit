@@ -26,8 +26,8 @@ class SliderContainer extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 6500,
-      speed:1300
+      autoplaySpeed: 4000,
+      speed:1000
     };
 
     const { festivals } = this.state;
