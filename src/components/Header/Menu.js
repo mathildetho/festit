@@ -4,6 +4,8 @@ import styled from "styled-components";
 import "./Menu.css";
 import logo from "../../img/logoFestIt.png";
 
+import {NavLink} from 'react-router-dom';
+
 /*import Festivals from '../Festivals';
 import Artistes from '../Artistes';
 import APropos from '../APropos';
@@ -26,25 +28,17 @@ function Menu({ open }) {
   return (
     <StyledMenu open={open} className="Menu">
       <nav className="Nav">
-        <a href="#">
-          <img className="logo" src={logo} alt="logo Fest It" />
-        </a>
+        <NavLink id="logo" to="/Festivals"><img className="logo" src={logo} alt="logo Fest It" /></NavLink>
         <ul className="menu">
           <li>
-            <a id="title" href="#">
-              Festivals
-            </a>
+          <li><NavLink activeClassName="active-link" id="title" to="/Festivals">Festivals</NavLink></li>
           </li>
           <li>
             <a id="title" href="#">
               Artistes
             </a>
           </li>
-          <li>
-            <a id="title" href="#">
-              À propos
-            </a>
-          </li>
+          <li><NavLink activeClassName="active-link" id="title" to="/A-propos">À propos</NavLink></li>
           <li>
             <a href="#">
               <img
@@ -59,7 +53,6 @@ function Menu({ open }) {
         </ul>
       </nav>
       {/*
-        <BrowserRouter>
             <nav className='Nav'>
                 <Link to="/"><img className='logo' src={logo} alt='logo Fest It' /></Link>
                 <ul className='menu'>
@@ -73,7 +66,7 @@ function Menu({ open }) {
             <Route path="/A-propos" exact component={APropos} />
             <Route path="/Panier" exact component={Panier} />
             </nav>
-        </BrowserRouter>*/}
+        */}
     </StyledMenu>
   );
 }

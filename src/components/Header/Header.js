@@ -1,7 +1,6 @@
 import React, {useState, useRef} from 'react';
 import Burger from "./Burger";
 import Menu from './Menu';
-import SliderContainer from '../Slider/SliderContainer';
 
 
 const useOnClickOutside = (ref, handler) => {
@@ -27,7 +26,6 @@ const Header = () => {
         <div ref={node}>
           <Burger open={open} setOpen={setOpen} />
           <Menu open={open} setOpen={setOpen} />
-          <SliderContainer />
         </div>
       </div>
     );
