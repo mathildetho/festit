@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Footer.css";
 
-import Logo from '../img/logoFestIt.png'
+import Logo from '../../img/logoFestIt.png'
 
 
 
@@ -11,9 +11,9 @@ class Footer extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            imgfacebook: require("../img/facebook.png"),
-            imgtwitter: require("../img/twitter.png"),
-            imginstagram: require("../img/instagram.png")
+            imgfacebook: require("../../img/facebook.png"),
+            imgtwitter: require("../../img/twitter.png"),
+            imginstagram: require("../../img/instagram.png")
             
         };
 
@@ -21,14 +21,14 @@ class Footer extends React.Component {
         this.handleMouseOut= this.handleMouseOut.bind(this);
     }
     handleMouseOver() {
-        this.setState({imgfacebook:require('../img/facebookhover.png')})
-        this.setState({imgtwitter:require('../img/twitterhover.png')})
-        this.setState({imginstagram:require('../img/instagramhover.png')})
+        this.setState({imgfacebook:require('../../img/facebookhover.png')})
+        this.setState({imgtwitter:require('../../img/twitterhover.png')})
+        this.setState({imginstagram:require('../../img/instagramhover.png')})
     }
     handleMouseOut() {
-        this.setState({imgfacebook: require('../img/facebook.png')})
-        this.setState({imgtwitter: require('../img/twitter.png')})
-        this.setState({imginstagram:require('../img/instagram.png')})
+        this.setState({imgfacebook: require('../../img/facebook.png')})
+        this.setState({imgtwitter: require('../../img/twitter.png')})
+        this.setState({imginstagram:require('../../img/instagram.png')})
     }
     render() {
         return(

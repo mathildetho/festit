@@ -1,14 +1,15 @@
 import React from 'react';
 import './App.css';
-import Footer from './components/Footer';
-import ArtistList from './components/ArtistList';
-import ArtistSlide from './components/ArtistSlide';
-import CardSlide from './components/CardSlide';
+
+import CardSlide from './components/CardSlideArtist/CardSlide';
+import ArtistFilter from './components/ArtistFilter/ArtistFilter';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
     <div className="App">
-      <ArtistSlide />
+
+      <ArtistFilter />
       <CardSlide />
       < Footer />
     </div>
