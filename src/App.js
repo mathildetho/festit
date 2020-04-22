@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Festivals from './components/Festivals/Festivals';
 import APropos from './components/APropos/APropos';
+import Panier from './components/Panier/Panier';
 import Footer from './components/Footer/Footer';
 
 
@@ -18,7 +19,7 @@ function App() {
         <Route path="/Artistes" />
         <Route path="/Artistes/:artistesIndex" />
         <Route path="/A-propos" component={APropos} />
-        <Route path="/Panier" /> 
+        <Route path="/Panier" component={Panier} /> 
       </Switch>
       < Footer />
     </div>
