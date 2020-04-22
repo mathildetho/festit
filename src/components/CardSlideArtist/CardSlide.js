@@ -39,6 +39,7 @@ class CardSlide extends React.Component {
             centerMode: false,
             infinite:false,
             dots: true,
+            fade: true,
             slidesToShow: 4,
             speed: 100,
             rows: 2,

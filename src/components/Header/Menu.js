@@ -34,9 +34,7 @@ function Menu({ open }) {
           <li><NavLink activeClassName="active-link" id="title" to="/Festivals">Festivals</NavLink></li>
           </li>
           <li>
-            <a id="title" href="#">
-              Artistes
-            </a>
+          <li><NavLink activeClassName="active-link" id="title" to="/Artists">Artistes</NavLink></li>
           </li>
           <li><NavLink activeClassName="active-link" id="title" to="/A-propos">À propos</NavLink></li>
           <li>

@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Footer.css";
+import {NavLink} from 'react-router-dom';
 
 import Logo from '../../img/logoFestIt.png'
 
@@ -40,7 +41,7 @@ class Footer extends React.Component {
                 </div>
                
                 <div className = "footer-content2">
-                    <p>A propos</p>
+                    <p><NavLink to="/A-propos">À propos</NavLink></p> 
                     <p>Mentions légales</p>
                     <p>Politique de confidentialité</p>
                     <p>@The Jackson Three Company | WCS | 2020</p>     
