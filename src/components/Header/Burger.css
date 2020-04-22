@@ -1,0 +1,47 @@
+.Burger {
+    display: none;
+  }
+
+.logoBurger {
+  display: none;
+}
+  
+  @media (max-width: 700px) {
+    .Burger {
+      position: absolute;
+      right: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 2rem;
+      height: 2rem;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 10;
+    }
+    .Burger:focus {
+      outline: none;
+    }
+
+    .mobile {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      width:100vw;
+    }
+  
+    .trait {
+      width: 2rem;
+      height: 0.25rem;
+      border-radius: 10px;
+      transition: all 0.3s linear;
+      transform-origin: 1px;
+    }
+    .logoBurger {
+      display:block;
+      z-index:2
+    }
+  }
+  
