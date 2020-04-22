@@ -3,6 +3,8 @@ import './App.css';
 import Header from './components/Header/Header';
 import Festivals from './components/Festivals/Festivals';
 import APropos from './components/APropos/APropos';
+import Footer from './components/Footer/Footer';
+
 
 import {Switch, Route} from 'react-router-dom';
 
@@ -19,6 +21,7 @@ function App() {
         <Route path="/A-propos" component={APropos} />
         <Route path="/Panier" /> 
       </Switch>
+      < Footer />
     </div>
   );
 }
