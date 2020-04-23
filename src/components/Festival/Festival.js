@@ -1,13 +1,12 @@
 import React from 'react';
 import './Festival.css';
-// import icon from '../../img/icon-titre.png';
-
+import FestivalCard from './FestivalCard';
 
 const Festival = props => {
     return(
         <div className='apropos festival'>
         <div className='container' >
-            <p>lol</p>
+            <FestivalCard />
         </div>
     </div>
     )
