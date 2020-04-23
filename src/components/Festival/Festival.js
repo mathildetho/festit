@@ -1,9 +1,15 @@
 import React from 'react';
-import FestivalCard from './FestivalCard';
+import './Festival.css';
+// import icon from '../../img/icon-titre.png';
 
-const Festival = () => {
+
+const Festival = props => {
     return(
-        <FestivalCard />
+        <div className='apropos festival'>
+        <div className='container' >
+            <p>lol</p>
+        </div>
+    </div>
     )
 }
 
