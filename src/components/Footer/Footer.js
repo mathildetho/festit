@@ -41,10 +41,10 @@ class Footer extends React.Component {
                 </div>
                
                 <div className = "footer-content2">
-                    <NavLink to="/A-propos">À propos</NavLink>
-                    <a>Mentions légales</a>
-                    <a>Politique de confidentialité</a>
-                    <a>@The Jackson Three Company | WCS | 2020</a>     
+                    <NavLink to="/A-propos" className='footer-link'>À propos</NavLink>
+                    <a className='footer-link'>Mentions légales</a>
+                    <a className='footer-link'>Politique de confidentialité</a>
+                    <a className='footer-link'>@The Jackson Three Company | WCS | 2020</a>     
                 </div>
                 
                 <div className= "footer-content3">
