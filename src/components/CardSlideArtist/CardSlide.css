@@ -41,11 +41,11 @@
 .artistCard-title {
    
    
-    height: 200px;
+    height: 220px;
     display: flex;
     flex-direction: row;
     position: absolute;
-    margin: 10px;
+    /* margin: 10px; */
     z-index: 1;
     
 } 
@@ -64,9 +64,11 @@
     width: 40px;
     height: 40px;
     object-fit: contain;
+    position: absolute;
+   
 }
 
-.slick-dots li button {
+.slick-dots-cards li button {
     font-size: 0;
     line-height: 0;
     display: block;
@@ -80,7 +82,7 @@
     background: 0 0;
   }
   
-.slick-dots li button::before {
+.slick-dots-cards li button::before {
     font-size: 20px;
     line-height: 20px;
     position: absolute;
@@ -94,11 +96,24 @@
     color: #f9b256;
 }
 
-.artist-genre  {
+.artistCard-title img  {
    position: absolute;
    display: flex;
-   bottom: o;
+   width: 40px;
+   height: 40px;
+   object-fit: contain;
+   margin-bottom: 10px;
+   
 }
+
+.artistCard-name {
+
+    text-align: right;
+    margin-left: 15px;   
+    padding: 5px;
+}
+   
+
 
 
 

@@ -23,15 +23,6 @@ class CardSlide extends React.Component {
             this.setState({artists: data})
         })
     }
-
-    // getDisplayArtist = () => {
-    //     this.setState({ artist: idartist })
-    // }
-
-    // handleShowSimpsonsOnlyClick() {
-    //     this.setState({ simpsonsOnly: !this.state.simpsonsOnly });
-    //   }
-    
       
     render() {
         const settings = {
@@ -39,7 +30,6 @@ class CardSlide extends React.Component {
             centerMode: false,
             infinite:false,
             dots: true,
-            fade: true,
             slidesToShow: 4,
             speed: 100,
             rows: 2,
@@ -62,7 +52,7 @@ class CardSlide extends React.Component {
                                     alt='icon-titre'
                                     className='icon-titre'
                                 />
-                                <h5>{artist.name}</h5>
+                                <h5 className='artistCard-name'><bold>{artist.name}</bold></h5>
                                 </div>
                                 <div className ='artist-genre'>
                                 <img 

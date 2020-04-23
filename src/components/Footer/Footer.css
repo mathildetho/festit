@@ -27,9 +27,11 @@ body {
     margin-right: 150px;
     background-color: #9185be; 
     justify-content: center;
-    
-    
+      
 }
+
+
+
 
 
 .footer-input {
@@ -78,7 +80,7 @@ height: 120px;
 
 
 
-@media screen and (max-width: 770px){
+@media screen and (max-width: 1180px){
 
     .Footer {
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import CardSlide from './CardSlideArtist/CardSlide';
 import SliderContainerArtists from './SliderContainerArtists';
+import ArtistFilter from './ArtistFilter/ArtistFilter';
 
 
 const Artists = () => {
@@ -8,6 +9,7 @@ const Artists = () => {
         <div>
 
             <SliderContainerArtists />
+            <ArtistFilter />
             <CardSlide />
         </div>
     )
