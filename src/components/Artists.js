@@ -4,13 +4,36 @@ import SliderContainerArtists from './SliderContainerArtists';
 import ArtistFilter from './ArtistFilter/ArtistFilter';
 
 
-const Artists = () => {
-    return (
-        <div>
+const Artists = (props, history) => {
 
+    // useEffect(() => {
+    //     axios.get('https://api-festival.herokuapp.com/api/artists')
+    //     .then(response => response.data)
+    //     .then(data => {
+    //         setArtists(data)
+    //     })
+    // }, [])
+
+    // const filterGenre = () => {
+    //     axios.get('https://api-festival.herokuapp.com/api/artists/${idartist}/style')
+    //     .then(response => response.data)
+    //     .then(data => {
+    //         setArtists(data)
+    //     })
+    // }
+
+    const { artists, setArtists } =props;
+
+     return (
+        <div>
             <SliderContainerArtists />
-            <ArtistFilter />
-            <CardSlide />
+            <ArtistFilter 
+                // filterGenre={filterGenre} 
+            />
+            <CardSlide {...props} 
+            // artist={artist} 
+
+            />
         </div>
     )
 }

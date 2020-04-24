@@ -6,10 +6,6 @@ import Icon from '../../img/icon-titre.png';
 import Genre from '../../img/genre.png';
 
 
-
-
-
-
 class CardSlide extends React.Component {
     
     state= {
@@ -22,6 +18,10 @@ class CardSlide extends React.Component {
         .then(data => {
             this.setState({artists: data})
         })
+    }
+
+    handleCard = (name) => {
+        this.props.history.push(`/Artists/${name}`)
     }
       
     render() {
@@ -39,11 +39,12 @@ class CardSlide extends React.Component {
 
         const {artists} = this.state;
 
+
         return (
             <div className='Container'>
                 {artists && <Slider {...settings}>
                     {artists.filter(artist => artist).map((artist, index) => (
-                        <div className= "Slide" key= {index}>
+                        <button className= "Slide" key= {index} onClick={() => this.handleCard(artist.name)}> 
                             <div className='artistCard'
                                  style={{ background: `center /cover no-repeat url('${artist.image_url}')` }}>
                                 <div className= 'artistCard-title'>
@@ -65,7 +66,7 @@ class CardSlide extends React.Component {
                            
                            
                             </div>
-                        </div>
+                        </button>
                     
                 ))}
                 
