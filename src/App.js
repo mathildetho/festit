@@ -13,7 +13,6 @@ function App() {
       <Header />
       <Switch>
         <Route exact path="/" component={Festivals} />
-        <Route path="/Festivals" component={Festivals} />
         <Route path="/Festivals/:festivalsIndex" />
         <Route path="/Artists" component={Artists} />
         <Route path="/Artists/:artistesIndex" />
