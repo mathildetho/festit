@@ -34,7 +34,23 @@ class CardSlide extends React.Component {
             speed: 100,
             rows: 2,
             slidesPerRow: 1,
-            slidesToScroll: 4     
+            slidesToScroll: 4,
+            responsive: [
+                {
+                    breakpoint: 1180,
+                    settings: {
+                        slidesToShow: 3,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 650,
+                    settings: {
+                        slidesToShow: 2,
+                        dots: true
+                    }
+                }
+            ]          
         };
 
         const {artists} = this.state;
@@ -55,16 +71,6 @@ class CardSlide extends React.Component {
                                 />
                                 <h5 className='artistCard-name'><bold>{artist.name}</bold></h5>
                                 </div>
-                                <div className ='artist-genre'>
-                                <img 
-                                    src= { Genre }
-                                    alt=' icon-genre'
-                                    className='icon-titre'
-                                />
-                                </div>
-                                
-                           
-                           
                             </div>
                         </button>
                     
