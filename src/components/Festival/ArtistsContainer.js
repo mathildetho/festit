@@ -35,24 +35,54 @@ const ArtistsContainer = () => {
             }
           }}
         >
-          {artists.map(artist => (
+
+            <div className="btn-coverflow">
+              <div className='img-artist' alt='artist' /> 
+              <div className="artist-name">
+                <img src={Icon} alt="icon-titre" className="icon-titre" />
+                <h5>Steve Aoki</h5>
+              </div>
+            </div>
+            <div className="btn-coverflow">
+              <div className='img-artist' alt='artist' /> 
+              <div className="artist-name">
+                <img src={Icon} alt="icon-titre" className="icon-titre" />
+                <h5>Beyoncé</h5>
+              </div>
+            </div>
+            <div className="btn-coverflow">
+              <div className='img-artist' alt='artist' /> 
+              <div className="artist-name">
+                <img src={Icon} alt="icon-titre" className="icon-titre" />
+                <h5>Rihanna</h5>
+              </div>
+            </div>
+            <div className="btn-coverflow">
+              <div className='img-artist' alt='artist' /> 
+              <div className="artist-name">
+                <img src={Icon} alt="icon-titre" className="icon-titre" />
+                <h5>artist name</h5>
+              </div>
+            </div>
+
+          {/* {artists.map(artist => (
             <button key={artist.idartist} className="btn-coverflow">
-              <div className="title-card">
+              <div className="artist-name">
                 <img src={Icon} alt="icon-titre" className="icon-titre" />
                 <h5>{artist.name}</h5>
               </div>
-              <img
+              <div
                 className="img-coverflow"
                 src={artist.image_url}
                 alt={artist.name}
                 data-action="/Artistes/{artist.idartist}"
               />
             </button>
-          ))}
+          ))} */}
+
         </Coverflow>
       </StyleRoot>
     );
-  };
+};
   
-  export default ArtistsContainer;
-  
+export default ArtistsContainer;

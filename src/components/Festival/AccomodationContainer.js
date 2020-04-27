@@ -6,12 +6,14 @@ const AccomodationContainer = props => {
         <div className={props.img ? 'accomodation airbnb-bg': 'accomodation'}>
             <h3>{props.title}</h3>
             {props.subtitle && props.img ? 
+            <div>
             <div className='partenariat'>
                 <h4>{props.subtitle}</h4>
                 <img src={props.img} alt='airbnb-logo' />
             </div> 
-            : ''}
-            <AccomodationList />
+            <AccomodationList img={props.img} />
+            </div>
+            : <AccomodationList />}
         </div>
     )
 }
