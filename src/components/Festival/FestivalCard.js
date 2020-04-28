@@ -1,10 +1,17 @@
 import React from 'react';
-import FestivalDesc from './FestivalDesc';
+import FestivalDescription from './FestivalDescription';
+import ArtistsContainer from './ArtistsContainer';
 
-const FestivalCard = () => {
-    return (
-        <FestivalDesc />
-        /*<ArtistsContainer />*/
+
+const FestivalCard = props => {
+    return(
+        <div className='description' >
+            <img className='img-desc' src='#' alt='img-festival' />
+           <div className='desccontent'>
+            <FestivalDescription /> 
+            <ArtistsContainer />
+           </div>
+        </div>
     )
 }
 
