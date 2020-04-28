@@ -1,6 +1,37 @@
-
-
-.Slide{
+.Container .slick-dots {
+    margin-bottom: -2.5rem;
+  }
+  
+  .Container .slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    cursor: pointer;
+    color: #f9b256;
+    border: 0;
+    outline: 0;
+    background: 0 0;
+  }
+  
+  .Container .slick-dots li.slick-active button:before {
+    color: #f9b256;
+  }
+  
+  .Container .slick-dots li button:before {
+    font-size: 2rem;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    content: "•";
+    opacity: 1;
+    text-align: center;
+    color: #9185be;
+  }
+  
+  .Slide {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,26 +40,28 @@
     background: none;
     color: white;
     object-fit: contain;
-}
-    
-
-
-.artistCard {
+  }
+  
+  .Container {
+    margin: 0 2rem 0 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .artistCard {
     display: flex;
     position: relative;
     width: 300px;
     height: 300px;
     padding: 20px;
     margin: 10px;
-    align-items: center;
     object-fit: contain;
     border-radius: 15px;
     font-size: 20px;
     cursor: pointer;
     z-index: 0;
-      
-}
-.artistCard::before {
+    outline: none;
+  }
+  .artistCard::before {
     content: "";
     position: absolute;
     display: flex;
@@ -36,45 +69,34 @@
     height: 100%;
     background: rgba(107, 92, 160, 0.6);
     border-radius: 15px;
-    left:0;
+    left: 0;
     bottom: 0;
     cursor: pointer;
-    
-    
-}
-
-
-.artistCard-title {
-   
-   
-    height: 300px;
+  }
+  
+  .artistCard-title {
     display: flex;
     flex-direction: row;
     position: absolute;
     /* margin: 10px; */
     z-index: 1;
-    
-} 
-
-
-.artist-image {
+  }
+  
+  .artist-image {
     width: inherit;
     height: 200px;
     object-fit: contain;
     border-radius: 15px;
-   
-
-}
-
-.icon-titre {
+  }
+  
+  .icon-titre {
     width: 40px;
     height: 40px;
     object-fit: contain;
     position: absolute;
-   
-}
-
-.Container slick-dots li button {
+  }
+  
+  .Container slick-dots li button {
     font-size: 6px;
     line-height: 0;
     display: block;
@@ -88,7 +110,7 @@
     background: 0 0;
   }
   
-.Container slick-dots li button::before {
+  .Container slick-dots li button::before {
     font-size: 20px;
     line-height: 20px;
     position: absolute;
@@ -100,84 +122,76 @@
     text-align: center;
     opacity: 1;
     color: #9185be;
-}
-    
-
-
-.Container slick-dots li.slick-active button:before {
+  }
+  
+  .Container slick-dots li.slick-active button:before {
     color: #f9b256;
-}
-
-.Container slick-dots li.slick-active button {
+  }
+  
+  .Container slick-dots li.slick-active button {
     color: #9185be;
-}
-
-.artistCard-title img  {
-   position: absolute;
-   display: flex;
-   width: 40px;
-   height: 40px;
-   object-fit: contain;
-   margin-bottom: 10px;
-   
-}
-
-.artistCard-name {
-
-    
-    text-align: right;
-    margin-left: 26px;   
-    padding: 0px;
-    font-size: 22px;
-}
-   
-
-
-
-@media screen and (max-width: 1180px) {
-
-
-.artistCard {
+  }
+  
+  .artistCard-title img {
+    position: absolute;
     display: flex;
-    position: relative;
-    width: 200px;
-    height: 200px;
-    padding: 20px;
-    margin: 10px;
-    align-items: center;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
-    border-radius: 15px;
-    font-size: 20px;
-    cursor: pointer;
-    z-index: 0;
-      
-}
-.artistCard::before {
-    content: "";
-    position: absolute;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    background: rgba(107, 92, 160, 0.6);
-    border-radius: 15px;
-    left:0;
-    bottom: 0;
-    cursor: pointer;
-    
-    
-}
-.artistCard-title {
-   
-   
-    height: 230px;
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    /* margin: 10px; */
-    z-index: 1;
-    
-} 
-
-}
-
-
+    margin-bottom: 10px;
+  }
+  
+  .artistCard-name {
+    text-align: right;
+    margin-left: 2rem;
+    padding: 0px;
+    font-size: 1.5rem;
+  }
+  
+  @media screen and (min-width: 780px) and (max-width: 1200px) {
+    .artistCard {
+      width: 200px;
+      height: 200px;
+    }
+    .artistCard::before {
+      content: "";
+      position: absolute;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      background: rgba(107, 92, 160, 0.6);
+      border-radius: 15px;
+      left: 0;
+      bottom: 0;
+      cursor: pointer;
+    }
+    .artistCard-title {
+      height: 230px;
+      display: flex;
+      flex-direction: row;
+      position: absolute;
+      /* margin: 10px; */
+      z-index: 1;
+    }
+  }
+  
+  @media screen and (max-width: 780px) and (min-width: 400px) {
+    .artistCard {
+      width: 150px;
+      height: 150px;
+    }
+    .artistCard-name {
+      font-size: 1rem;
+    }
+  }
+  
+  @media screen and (max-width: 450px) {
+    .artistCard {
+      width: 250px;
+      height: 250px;
+    }
+    .artistCard-name {
+      font-size: 0.8rem;
+    }
+  }
+  
