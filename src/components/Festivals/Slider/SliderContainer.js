@@ -10,7 +10,7 @@ class SliderContainer extends React.Component {
 
   componentDidMount() {
     axios
-      .get("https://api-festival.herokuapp.com/api/festival")
+      .get("https://api-festit.herokuapp.com/api/festival")
       .then(res => res.data)
       .then(data => {
         this.setState({ festivals: data });

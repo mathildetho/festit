@@ -4,8 +4,8 @@ import "./CardSlide.css";
 import Icon from "../../img/icon-titre.png";
 
 const FestivalsContainer= (props)=> {
-   const handleCard = name => {
-   props.history.push(`/Festivals/${name}`);
+   const handleCard = idfestival => {
+   props.history.push(`/Festival/${idfestival}`);
   };
 
     const settings = {
@@ -55,7 +55,7 @@ const FestivalsContainer= (props)=> {
                 <button
                   className="Slide"
                   key={festival.idfestival}
-                  onClick={() => handleCard(festival.name)}
+                  onClick={() => handleCard(festival.idfestival)}
                 >
                   <div
                     className="artistCard"

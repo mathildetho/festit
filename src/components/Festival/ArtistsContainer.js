@@ -11,7 +11,7 @@ const ArtistsContainer = () => {
   
     useEffect(() => {
       axios
-        .get("https://api-festival.herokuapp.com/api/artists")
+        .get("https://api-festit.herokuapp.com/api/artists")
         .then(response => response.data)
         .then(data => {
           setArtists(data);

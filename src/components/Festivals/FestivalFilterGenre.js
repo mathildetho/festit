@@ -9,7 +9,7 @@ class FestivalFilterGenre extends React.Component {
         }
     }
     componentDidMount() {
-        axios.get('https://api-festival.herokuapp.com/api/style')
+        axios.get('https://api-festit.herokuapp.com/api/festival')
         .then(response=> response.data)
         .then(data => {
             this.setState({ genres: data })

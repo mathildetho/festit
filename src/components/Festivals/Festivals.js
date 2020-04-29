@@ -9,20 +9,20 @@ const Festivals = (props,history) => {
     const [festivals, setFestivals] = useState([])
 
     useEffect(() => {
-        axios.get('https://api-festival.herokuapp.com/api/festival')
+        axios.get('https://api-festit.herokuapp.com/api/festival')
         .then(response => response.data)
         .then(data => {
             setFestivals(data)
         })
     }, [])
 
-    const filterGenre = () => {
-        axios.get('https://api-festival.herokuapp.com/api/festival/${idfestival}/style')
-        .then(response => response.data)
-        .then(data => {
-            setFestivals(data)
-        })
-    }
+    // const filterGenre = () => {
+    //     axios.get(`https://api-festit.herokuapp.com/api/festival/${idfestival}/style`)
+    //     .then(response => response.data)
+    //     .then(data => {
+    //         setFestivals(data)
+    //     })
+    // }
 
     return (
         <div>
@@ -30,7 +30,7 @@ const Festivals = (props,history) => {
             <FestivalFilter 
                 festivals={festivals}
                 setFestivals={setFestivals}
-                filterGenre={filterGenre} 
+               // filterGenre={filterGenre} 
             />
             <FestivalsContainer
                 {...props} 
