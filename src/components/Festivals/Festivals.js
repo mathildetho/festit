@@ -15,22 +15,34 @@ const Festivals = (props,history) => {
             setFestivals(data)
         })
     }, [])
+    
 
-    // const filterGenre = () => {
-    //     axios.get(`https://api-festit.herokuapp.com/api/festival/${idfestival}/style`)
-    //     .then(response => response.data)
-    //     .then(data => {
-    //         setFestivals(data)
-    //     })
-    // }
+    const [genres, setGenres] = useState([])
+    useEffect(() => {
+        axios.get('https://api-festit.herokuapp.com/api/style')
+        .then(response => response.data)
+        .then(data => {
+            setGenres(data)
+        })
+    }, []);
+    
+    
+    const filterGenre = (genre) => {
+        const idfestival = festivals.map(festival => festival.idfestival);
+        axios.get(`https://api-festit.herokuapp.com/api/festival/${idfestival}/style`)
+        .then(response => response.data)
+        .then(data => {
+            setFestivals(data)
+        })
+    }
 
     return (
         <div>
             <SliderContainer />
             <FestivalFilter 
                 festivals={festivals}
-                setFestivals={setFestivals}
-               // filterGenre={filterGenre} 
+                filterGenre={filterGenre} 
+                genres={genres}
             />
             <FestivalsContainer
                 {...props} 

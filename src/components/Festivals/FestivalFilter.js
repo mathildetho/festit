@@ -4,7 +4,9 @@ import FestivalFilterDate from './FestivalFilterDate';
 import FestivalFilterGenre from './FestivalFilterGenre';
 import './Filter.css';
 
-const FestivalFilter = ({festivals}) => {
+const FestivalFilter = (props) => {
+    const {festivals, filterGenre, genres } = props;
+
     return (
         
         <div className= 'Filter'>
@@ -33,7 +35,8 @@ const FestivalFilter = ({festivals}) => {
                 <select className='genre-list'>
                     <option value="Tous">Tous</option>
                     <FestivalFilterGenre 
-                        festivals={festivals}
+                        genres={genres}
+                        filterGenre={filterGenre} 
                     />
                 </select>
         </div>
