@@ -1,50 +1,58 @@
 import React from 'react';
 
 const AccomodationCard = props => {
-    return(
-          <div className="accomodation-content">
-            <div className='all-content'>
-                <div src='' alt='img' className='img-accomodation' />
+    const {accomodation, accomodationAirbnb} = props;
 
-            <div className='desc-accomodation'>
-                <h4>Nom hébergement</h4>
-                <p>description hebergement Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-            </div>
-                {props.img ? 
-                <div className='info-accomodation info-airbnb'>
-                    <div className='list-info' >
-                        <div>
-                            <div className='km' >
-                                <p className='number'>0</p>
-                                <p>kms</p>
+    return(
+            <div className="accomodation-content">
+            {accomodationAirbnb ? 
+                <div className='all-content'>
+                    <img src={accomodationAirbnb.image1} alt={accomodationAirbnb.namePackage} className='img-accomodation' />
+                    <div className='desc-accomodation'>
+                        <h4>{accomodationAirbnb.namePackage}</h4>
+                        <p>{accomodationAirbnb.description}</p>
+                    </div>
+                    <div className='info-accomodation info-airbnb'>
+                        <div className='list-info' >
+                            <div>
+                                <div className='km' >
+                                    <p className='number'>{accomodationAirbnb.km}</p>
+                                    <p>kms</p>
+                                </div>
+                                <p>du festival</p>
                             </div>
-                            <p>du festival</p>
+                            <div className='place'>
+                                <p className='number'>{accomodationAirbnb.numberPlace}</p>
+                                <p>couchages</p>
+                            </div>
+                            <div className='available'>
+                                <p className='number'>{accomodationAirbnb.placeAvailable}</p>
+                                <p>disponibles</p>
+                            </div>
                         </div>
-                        <div className='place'>
-                            <p className='number'>0</p>
-                            <p>couchages</p>
-                        </div>
-                        <div className='available'>
-                            <p className='number'>0</p>
-                            <p>disponibles</p>
-                        </div>
+                        <button>Réserver</button>
+                    </div>
+                </div>
+                : 
+                    <div className='all-content'>
+                    <img src={accomodation.image1} alt={accomodation.namePackage} className='img-accomodation' />
+                    <div className='desc-accomodation'>
+                        <h4>{accomodation.namePackage}</h4>
+                        <p>{accomodation.description}</p>
+                    </div>
+                    <div className='info-accomodation'>
+                    <div className='place'>
+                        <p className='number'>{accomodation.numberPlace}</p>
+                        <p>couchages</p>
+                    </div>
+                    <div className='available'>
+                        <p className='number'>{accomodation.placeAvailable}</p>
+                        <p>disponibles</p>
                     </div>
                     <button>Réserver</button>
+                    </div>
                 </div>
-                : <div className='info-accomodation'>
-                <div className='place'>
-                    <p className='number'>0</p>
-                    <p>couchages</p>
-                </div>
-                <div className='available'>
-                    <p className='number'>0</p>
-                    <p>disponibles</p>
-                </div>
-                <button>Réserver</button>
-                </div>
-                }
-            
-            </div>
+                }   
           </div>
     )
 }

@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const Festivals = (props,history) => {
 
-    const [festivals, setFestivals] = useState([])
+    const [festivals, setFestivals] = useState([]);
 
     useEffect(() => {
         axios.get('https://api-festit.herokuapp.com/api/festival')

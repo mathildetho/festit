@@ -30,9 +30,7 @@ function Menu({ open }) {
       <nav className="Nav">
         <NavLink id="logo" to="/"><img className="logo" src={logo} alt="logo Fest It" /></NavLink>
         <ul className="menu">
-          <li>
           <li><NavLink activeClassName="active-link" id="title" to="/">Festivals</NavLink></li>
-          </li>
           <li>
             <a id="title" href="#">
               Artistes

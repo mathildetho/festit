@@ -61,21 +61,21 @@ class Footer extends React.Component {
                     onMouseOut={this.handleMouseOut} 
                     src={this.state.imgfacebook} 
                     alt="facebook-logo" 
-                    class="social-logo"
+                    className="social-logo"
                     />     
                     <img
                         onMouseOver={this.handleMouseOver}
                         onMouseOut={this.handleMouseOut} 
                         src={this.state.imgtwitter}
                         alt="twitter-logo" 
-                        class="social-logo"
+                        className="social-logo"
                         />
                     <img 
                         onMouseOver={this.handleMouseOver}
                         onMouseOut={this.handleMouseOut} 
                         src={this.state.imginstagram}
                         alt="insta-logo" 
-                        class="social-logo"
+                        className="social-logo"
                         />
               
         

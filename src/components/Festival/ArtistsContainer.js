@@ -16,7 +16,7 @@ const ArtistsContainer = () => {
         .then(data => {
           setArtists(data);
         });
-    });
+    }, []);
   
     return (
       <StyleRoot>
@@ -31,7 +31,7 @@ const ArtistsContainer = () => {
             },
             "@media (min-width: 900px)": {
               width: "90%",
-              height: "50vh"
+              height: "30vh"
             }
           }}
         >

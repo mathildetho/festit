@@ -73,6 +73,7 @@
     display:flex;
     flex-direction: column;
     justify-content: space-between;
+    margin: 0.5rem;
 }
 
 .desc-accomodation p {
@@ -83,7 +84,7 @@
 
 .img-accomodation{
     height: 30vh;
-    background-color: #9185be;
+    object-fit: cover;
     border-radius: 30px 30px 0 0;
 }
 

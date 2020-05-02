@@ -4,13 +4,22 @@ import ArtistsContainer from './ArtistsContainer';
 
 
 const FestivalCard = (props) => {
-    const {festivals} = props
+    const {festival, genre} = props
     return(
         <div className='description' >
-            <img className='img-desc' src='#' alt='img-festival' />
+            <div className='containerimg'>
+                <div className='purpleop' />
+                <img className='img-desc' src={festival.image1} alt='img-festival' />
+            </div>
            <div className='desccontent'>
-            <FestivalDescription festivals={festivals} /> 
+            <FestivalDescription 
+                festival={festival} 
+                genre={genre}
+            /> 
             <ArtistsContainer />
+            <div className='button-ticket'>
+               <button>Acheter un ticket</button>
+           </div>
            </div>
         </div>
     )

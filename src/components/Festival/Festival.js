@@ -4,28 +4,39 @@ import FestivalCard from './FestivalCard';
 import Accomodations from './Accomodations';
 import axios from 'axios';
 
-const Festival = props => {
-    const [festivals, setFestivals] = useState([])
+const Festival = (props, history) => {
+    const [festival, setFestival] = useState([])
 
     useEffect(() => {
-        const idFestival = props.match.params.idfestival;
-        axios.get(`https://api-festit.herokuapp.com/api/festival/${idFestival}`)
+        const idfestival = props.match.params.idfestival;
+        axios.get(`https://api-festit.herokuapp.com/api/festival/${idfestival}`)
         .then(response => response.data)
         .then(data => {
-            setFestivals(data)
+            setFestival(data[0])
         })
     }, [])
 
-    console.log(festivals)
+    const [genre, setGenre] = useState([])
+
+    useEffect(() => {
+        const idfestival = props.match.params.idfestival;
+        axios.get(`https://api-festit.herokuapp.com/api/festival/${idfestival}/style`)
+        .then(response => response.data)
+        .then(data => {
+            setGenre(data)
+        })
+    }, [])
 
     return(
         <div className='apropos festival'>
         <div className='container' >
             <FestivalCard 
-                festivals={festivals} 
+                festival={festival} 
+                genre={genre}
             />
             <Accomodations 
-                festivals={festivals} 
+                {...props} 
+                festival={festival} 
             />
         </div>
     </div>

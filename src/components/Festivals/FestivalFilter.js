@@ -24,13 +24,17 @@ const FestivalFilter = ({festivals}) => {
               
                     <option value="N'inporte quand">
                         N'importe quand</option>
-                    <FestivalFilterDate />
+                    <FestivalFilterDate 
+                        festivals={festivals}
+                    />
                    
                 </select>
 
                 <select className='genre-list'>
                     <option value="Tous">Tous</option>
-                    <FestivalFilterGenre />
+                    <FestivalFilterGenre 
+                        festivals={festivals}
+                    />
                 </select>
         </div>
     );

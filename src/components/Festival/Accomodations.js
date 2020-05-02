@@ -1,19 +1,36 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import AccomodationContainer from './AccomodationContainer';
 import './Accomodations.css';
 import airbnb from '../../img/logo-airbnb.png';
 
 const Accomodations = props => {
+    const [accomodations, setAccomodations] = useState([]);
+    useEffect(() => {
+        const idfestival = props.match.params.idfestival;
+        axios.get(`https://api-festit.herokuapp.com/api/accomodation/festival/${idfestival}`)
+        .then(response => response.data)
+        .then(data => {
+            setAccomodations(data)
+        })
+    }, [])
+
+    const accomodationNoAirbnb = accomodations.filter(accomodation => !accomodation.airbnb)
+
     return(
         <div className='accomodations'>
-            <AccomodationContainer 
-            title="Dormez au coeur de la fête" 
-            />
-            <AccomodationContainer 
-            title="Le luxe à portée de main" 
-            subtitle='En partenariat avec'
-            img={airbnb}
-            />
+            {accomodationNoAirbnb ?
+                <AccomodationContainer 
+                title="Dormez au coeur de la fête" 
+                accomodations={accomodations}
+                />
+                :
+                <AccomodationContainer 
+                title="Le luxe à portée de main" 
+                subtitle='En partenariat avec'
+                img={airbnb}
+                accomodations={accomodations}
+                />}
         </div>
     )
 }
