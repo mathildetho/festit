@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import Artist from '../../img/artist.png';
+
 
 class ArtistFilterItem extends React.Component {
     constructor(props) {
@@ -20,7 +22,8 @@ class ArtistFilterItem extends React.Component {
     render() {
        const { artists } = this.state;
         return artists.map((artist) =>
-     <option key={artist.idartist} value={artist.name} >{artist.name}</option>
+            <option key={artist.idartist} value={artist.name} >{artist.name}
+            </option>
         )
     }
 }

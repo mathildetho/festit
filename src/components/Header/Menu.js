@@ -25,9 +25,7 @@ function Menu({ open, setOpen }) {
         <ul className="menu">
           <li><NavLink exact={true} onClick={() => setOpen(!open)} activeClassName="active-link" id="title" to="/">Festivals</NavLink></li>
           <li>
-            <a id="title" href="#">
-              Artistes
-            </a>
+          <li><NavLink activeClassName="active-link" id="title" to="/Artists">Artistes</NavLink></li>
           </li>
           <li><NavLink onClick={() => setOpen(!open)} activeClassName="active-link" id="title" to="/A-propos">À propos</NavLink></li>
           <li>

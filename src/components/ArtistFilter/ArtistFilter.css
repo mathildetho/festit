@@ -1,0 +1,33 @@
+.ArtistFilter {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin:20px;
+    
+}
+
+.artist-list, .genre-list {
+
+    background-color: #f9b256;
+    padding: 15px;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    margin:5px;
+}
+
+.artist-list {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+}
+
+.genre-list {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+}
+
