@@ -1,9 +1,9 @@
 import React from 'react';
 
 const FestivalFilterGenre = (props) => {
-        const { genres, filterGenre }= props;
+        const { genres } = props;
         return genres.map(genre =>
-        <option onChange={() => filterGenre(genre.name)} key={genre.idstyle} value={genre.name}>{genre.name}</option>
+        <option key={genre.idstyle} value={genre.name}>{genre.name}</option>
         )
 }
 

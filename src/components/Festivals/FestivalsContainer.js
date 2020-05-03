@@ -68,7 +68,7 @@ const FestivalsContainer= (props)=> {
                     <div className="artistCard-title">
                       <img src={Icon} alt="icon-titre" className="icon-titre" />
                       <h5 className="artistCard-name">
-                        <bold>{festival.name}</bold>
+                        {festival.name}
                       </h5>
                     </div>
                   </div>

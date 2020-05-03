@@ -12,15 +12,16 @@ const AccomodationModal = (props) => {
 
     let modalClass = isModalOpen ? 'modal' : 'modal closed';
 
-    const place = () => {
-        let available;
-        for(let i=1; i<accomodation.numberPlace; i++) {
-            available += 1;
-            return available
-        }  
-    }
-   
+    let available = [];
+    for(let i=1; i<accomodation.numberPlace+1; i++) {
+        available.push(i);
+    }  
 
+    const [price, setPrice] = useState(accomodation.price);
+    const handlePrice = (event) => {
+        setPrice(accomodation.price*event)
+    }
+    
     return (
         <>
             <button className="btn" onClick={() => handleModalOpen()} type="button">
@@ -44,16 +45,24 @@ const AccomodationModal = (props) => {
                             <div className='option-modal'>
                                 <div>
                                     <h5>Nombres de places</h5>
-                                    <select>
-                                        <option>{place}</option>
+                                    <div className='select'>
+                                    <select onChange={(event) => handlePrice(event.target.value)}>
+                                        {available.map((place, index) => (
+                                            <option key={index} value={place}>{place}</option>
+                                        ))}
                                     </select>
+                                    </div>
                                 </div>
                                 <div>
-                                    <h5>Prix</h5>
+                                    <h5>Prix par place</h5>
                                     <p>{accomodation.price}€</p>
                                 </div>
-                                <button>Ajouter au panier</button>
+                                <div>
+                                    <h5>Prix Total</h5>
+                                    <p>{price}€</p>
+                                </div>
                             </div>
+                            <button>Ajouter au panier</button>
                         </div>
                     </div>
                 </div>

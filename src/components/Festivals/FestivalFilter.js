@@ -24,7 +24,7 @@ const FestivalFilter = (props) => {
 
                 <select className='festival-date'> 
               
-                    <option value="N'inporte quand">
+                    <option value="N'importe quand">
                         N'importe quand</option>
                     <FestivalFilterDate 
                         festivals={festivals}
@@ -32,11 +32,10 @@ const FestivalFilter = (props) => {
                    
                 </select>
 
-                <select className='genre-list'>
+                <select onChange={(e) => filterGenre(e.target.value)} className='genre-list'>
                     <option value="Tous">Tous</option>
                     <FestivalFilterGenre 
                         genres={genres}
-                        filterGenre={filterGenre} 
                     />
                 </select>
         </div>

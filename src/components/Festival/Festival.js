@@ -14,7 +14,7 @@ const Festival = (props, history) => {
         .then(data => {
             setFestival(data[0])
         })
-    }, [])
+    }, [props.match.params.idfestival])
 
     const [genre, setGenre] = useState([])
 
@@ -25,7 +25,7 @@ const Festival = (props, history) => {
         .then(data => {
             setGenre(data)
         })
-    }, [])
+    }, [props.match.params.idfestival])
 
     return(
         <div className='apropos festival'>

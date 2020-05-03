@@ -18,8 +18,13 @@
   }
 
   .modal__header {
-      width:100%;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
   }
+
   
   .modal {
     height: auto;
@@ -27,7 +32,7 @@
     background: #fff;
     padding: 20px;
     border-radius: 30px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24);
     overflow: hidden;
     animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
@@ -71,7 +76,9 @@
   }
 
   .modal__header button {
-    border: 0.1rem solid #9185be !important;   
+    border: 0.1rem solid #9185be !important;  
+    transition: none; 
+    margin-top: 1rem;
   }
 
   .modal__img {
@@ -90,9 +97,63 @@
       display: flex;
       width:100%;
       justify-content: space-around;
-      align-items: center;
+      align-items: baseline;
   }
   
+  .option-modal select {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    appearance:none;
+    outline:0;
+    box-shadow:none;
+    border:0!important;
+    background: #9185be;
+    background-image: none;
+    flex: 1;
+    padding: 0.5rem;
+    color:#fff;
+    cursor:pointer;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+ }
+
+ .option-modal select::-ms-expand {
+    display: none;
+ }
+
+ .option-modal .select {
+    position: relative;
+    display: flex;
+    margin: auto;
+    width: 5rem;
+    height: 2rem;
+    line-height: 3;
+    background: #9185be;
+    overflow: hidden;
+    border-radius: 10px;
+ }
+ .option-modal .select::after {
+    content: '\25BC';
+    display: flex;
+    justify-content: center;
+    width: 0.5rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #9185be;
+    cursor:pointer;
+    color:#fff;
+    pointer-events:none;
+    transition:.25s all ease;
+    height: 2rem;
+    align-items: center;
+ }
+ .option-modal .select:hover::after {
+    color: #f9b256;
+ }
+
   @keyframes scale-in-center {
     0% {
       -webkit-transform: scale(0);

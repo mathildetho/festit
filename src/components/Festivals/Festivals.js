@@ -27,12 +27,13 @@ const Festivals = (props,history) => {
     }, []);
     
     
-    const filterGenre = (genre) => {
+    const filterGenre = (e) => {
         const idfestival = festivals.map(festival => festival.idfestival);
         axios.get(`https://api-festit.herokuapp.com/api/festival/${idfestival}/style`)
         .then(response => response.data)
         .then(data => {
             setFestivals(data)
+            console.log(data)
         })
     }
 

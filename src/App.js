@@ -18,7 +18,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Festivals} />
         <Route path="/Festival/:idfestival" component={Festival} />
-        <Route path="/Artistes" />
+        <Route exact path="/Artistes" />
         <Route path="/Artistes/:artistesIndex" />
         <Route path="/A-propos" component={APropos} />
         <Route path="/Panier" /> 

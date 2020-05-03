@@ -13,7 +13,7 @@ const Accomodations = props => {
         .then(data => {
             setAccomodations(data)
         })
-    }, [])
+    }, [props.match.params.idfestival])
 
     const accomodationNoAirbnb = accomodations.filter(accomodation => !accomodation.airbnb)
 
