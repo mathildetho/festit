@@ -6,7 +6,7 @@ import Festivals from './components/Festivals/Festivals';
 import APropos from './components/APropos/APropos';
 import Footer from './components/Footer/Footer';
 import Festival from './components/Festival/Festival';
-
+import ScrollToTop from './components/ScrollTopTop';
 
 import {Switch, Route} from 'react-router-dom';
 
@@ -14,6 +14,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <ScrollToTop />
       <Switch>
         <Route exact path="/" component={Festivals} />
         <Route path="/Festival/:idfestival" component={Festival} />

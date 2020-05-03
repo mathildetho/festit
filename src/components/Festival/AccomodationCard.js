@@ -1,4 +1,5 @@
 import React from 'react';
+import AccomodationModal from './AccomodationModal';
 
 const AccomodationCard = props => {
     const {accomodation, accomodationAirbnb} = props;
@@ -30,28 +31,30 @@ const AccomodationCard = props => {
                                 <p>disponibles</p>
                             </div>
                         </div>
-                        <button>Réserver</button>
+                        <button>Ajouter au panier</button>
                     </div>
                 </div>
                 : 
                     <div className='all-content'>
-                    <img src={accomodation.image1} alt={accomodation.namePackage} className='img-accomodation' />
-                    <div className='desc-accomodation'>
-                        <h4>{accomodation.namePackage}</h4>
-                        <p>{accomodation.description}</p>
+                        <img src={accomodation.image1} alt={accomodation.namePackage} className='img-accomodation' />
+                        <div className='desc-accomodation'>
+                            <h4>{accomodation.namePackage}</h4>
+                            <p>{accomodation.description}</p>
+                        </div>
+                        <div className='info-accomodation'>
+                            <div className='place'>
+                                <p className='number'>{accomodation.numberPlace}</p>
+                                <p>couchages</p>
+                            </div>
+                            <div className='available'>
+                                <p className='number'>{accomodation.placeAvailable}</p>
+                                <p>disponibles</p>
+                            </div>
+                            <AccomodationModal 
+                                accomodation={accomodation}
+                            />
+                        </div>
                     </div>
-                    <div className='info-accomodation'>
-                    <div className='place'>
-                        <p className='number'>{accomodation.numberPlace}</p>
-                        <p>couchages</p>
-                    </div>
-                    <div className='available'>
-                        <p className='number'>{accomodation.placeAvailable}</p>
-                        <p>disponibles</p>
-                    </div>
-                    <button>Réserver</button>
-                    </div>
-                </div>
                 }   
           </div>
     )
