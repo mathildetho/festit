@@ -1,8 +1,48 @@
 .Filter {
-
+    margin: 1rem auto;
+    width: 80%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin:20px;
 }
+
+.festival-date, .festival-location {
+    background-color: #f9b256;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    width:100%;
+}
+.select select {
+    font-family: 'Poppins', sans-serif;
+}
+.select {
+    padding: 0.5rem 0;
+    position: relative;
+    display: flex;
+    margin: auto;
+    width: 30%;
+    height: 2rem;
+    line-height: 3;
+    background: #f9b256;
+    overflow: hidden;
+    border-radius: 10px;
+ }
+.select::after {
+    content: '\25BC';
+    display: flex;
+    justify-content: center;
+    width: 0.5rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #f9b256;
+    cursor:pointer;
+    color:#fff;
+    pointer-events:none;
+    transition:.25s all ease;
+    align-items: center;
+ }

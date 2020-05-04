@@ -9,7 +9,7 @@ function ArtistFilter() {
     return (
         
         <div className= 'ArtistFilter'>
-            <form>
+            <div className='select'>
                 <select className='artist-list'> 
               
                     <option value="any">
@@ -17,14 +17,14 @@ function ArtistFilter() {
                     <ArtistFilterItem />
                    
                 </select>
-            </form>
+            </div>
 
-            <form>
+            <div className='select'>
                 <select className='genre-list'>
                     <option value="any">Genre</option>
                     <ArtistFilterGenre />
                 </select>
-            </form>
+            </div>
         </div>
     );
 }

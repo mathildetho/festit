@@ -69,7 +69,7 @@ class CardSlide extends React.Component {
                                     alt='icon-titre'
                                     className='icon-titre'
                                 />
-                                <h5 className='artistCard-name'><bold>{artist.name}</bold></h5>
+                                <h5 className='artistCard-name'>{artist.name}</h5>
                                 </div>
                             </div>
                         </button>

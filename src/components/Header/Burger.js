@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import "./Burger.css";
 import logo from '../../img/logoFestIt.png';
-
+import {Link} from 'react-router-dom';
 
 const StyledBurger = styled.button`
   .trait {
@@ -25,7 +25,7 @@ const StyledBurger = styled.button`
 const Burger = ({ open, setOpen }) => {
   return (
     <div className="mobile">
-      <a className='logoBurger' href="#"><img className='logo' src={logo} alt='logo Fest It' /></a>
+      <Link className='logoBurger' to="/"><img className='logo' src={logo} alt='logo Fest It' /></Link>
       <StyledBurger className="Burger" open={open} onClick={() => setOpen(!open)}>
         <div className="trait" />
         <div className="trait" />

@@ -115,7 +115,7 @@
     color:#fff;
     cursor:pointer;
     font-size: 1em;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
  }
 
  .option-modal select::-ms-expand {
@@ -127,7 +127,6 @@
     display: flex;
     margin: auto;
     width: 5rem;
-    height: 2rem;
     line-height: 3;
     background: #9185be;
     overflow: hidden;
@@ -147,7 +146,6 @@
     color:#fff;
     pointer-events:none;
     transition:.25s all ease;
-    height: 2rem;
     align-items: center;
  }
  .option-modal .select:hover::after {
