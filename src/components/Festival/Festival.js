@@ -33,6 +33,7 @@ const Festival = (props, history) => {
             <FestivalCard 
                 festival={festival} 
                 genre={genre}
+                {...props} 
             />
             <Accomodations 
                 {...props} 

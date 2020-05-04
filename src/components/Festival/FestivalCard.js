@@ -16,7 +16,10 @@ const FestivalCard = (props) => {
                 festival={festival} 
                 genre={genre}
             /> 
-            <ArtistsContainer />
+            <ArtistsContainer 
+                festival={festival}
+                {...props} 
+            />
             <div className='button-ticket'>
                <button>Acheter un ticket</button>
            </div>
