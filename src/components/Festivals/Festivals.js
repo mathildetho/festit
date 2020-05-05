@@ -37,12 +37,24 @@ const Festivals = (props,history) => {
         })
     }
 
+    const filterLocation = (location) => {
+        const locationFest = festivals.filter(festival => festival.country.includes(location));
+        setFestivals(locationFest)
+    }
+
+    const filterDate = (date) => {
+        const dateFest = festivals.filter(festival => festival.startDate.includes(date));
+        setFestivals(dateFest)
+    }
+
     return (
         <div>
             <SliderContainer />
             <FestivalFilter 
                 festivals={festivals}
                 filterGenre={filterGenre} 
+                filterLocation={filterLocation}
+                filterDate={filterDate}
                 genres={genres}
             />
             <FestivalsContainer

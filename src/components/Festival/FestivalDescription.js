@@ -9,7 +9,6 @@ const Festival = (props) => {
     const {festival, genre} = props;
     const style = genre.map(element => Object.values(element)).join(', ');
 
-
     return(
         <div>
             <div className='text-desc' >
@@ -24,6 +23,7 @@ const Festival = (props) => {
                             </div>
                             <div className='icon-text'>
                                 <img className='icon-desc' src={date} alt='icon-location' />
+   
                                 <p>du {festival.startDate} au {festival.endDate}</p>
                             </div>
                             <div className='icon-text'>
