@@ -111,7 +111,6 @@
     background: #9185be;
     background-image: none;
     flex: 1;
-    padding-left: 1rem;
     color:#fff;
     cursor:pointer;
     font-size: 1em;
@@ -132,6 +131,10 @@
     overflow: hidden;
     border-radius: 10px;
  }
+
+ .option-modal .pass {
+   width: 8rem;
+}
  .option-modal .select::after {
     content: '\25BC';
     display: flex;
@@ -147,10 +150,13 @@
     pointer-events:none;
     transition:.25s all ease;
     align-items: center;
+    height: 100%;
  }
- .option-modal .select:hover::after {
-    color: #f9b256;
- }
+
+.option-modal p {
+  margin: auto;
+  height: 2.5rem;
+}
 
   @keyframes scale-in-center {
     0% {
@@ -212,4 +218,3 @@
       width: 90%;
     }
   }
-  
