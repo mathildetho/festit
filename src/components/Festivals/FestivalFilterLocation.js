@@ -1,11 +1,11 @@
 import React from 'react';
 
 const FestivalFilterLocation = (props) => {
-       const { festivals } = props;
-        return festivals.map((festival) =>
-            <option key={festival.idfestival} value={festival.country} >{festival.country}
-            </option>
-        )
+    const { location } = props;
+    return location.map((country, index) => (
+        <option key={index} value={country} >{country}
+        </option>
+    ))
 }
 
 export default FestivalFilterLocation;

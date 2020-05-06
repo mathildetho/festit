@@ -44,7 +44,7 @@ const AccomodationModal = (props) => {
                             <h4>{accomodation.namePackage}</h4>
                             <div className='option-modal'>
                                 <div>
-                                    <h5>Nombres de places</h5>
+                                    <h5>Quantité</h5>
                                     <div className='select'>
                                     <select onChange={(event) => handlePrice(event.target.value)}>
                                         {available.map((place, index) => (
@@ -54,7 +54,7 @@ const AccomodationModal = (props) => {
                                     </div>
                                 </div>
                                 <div>
-                                    <h5>Prix par place</h5>
+                                    <h5>Prix</h5>
                                     <p>{accomodation.price}€</p>
                                 </div>
                                 <div>

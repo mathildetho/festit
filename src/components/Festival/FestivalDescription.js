@@ -8,6 +8,8 @@ import date from '../../img/date.png';
 const Festival = (props) => {
     const {festival, genre} = props;
     const style = genre.map(element => Object.values(element)).join(', ');
+    const startDate = new Date(festival.startDate)
+    const endDate = new Date(festival.endDate)
 
     return(
         <div>
@@ -24,7 +26,7 @@ const Festival = (props) => {
                             <div className='icon-text'>
                                 <img className='icon-desc' src={date} alt='icon-location' />
    
-                                <p>du {festival.startDate} au {festival.endDate}</p>
+                                <p>du {startDate.toLocaleDateString()} au {endDate.toLocaleDateString()}</p>
                             </div>
                             <div className='icon-text'>
                                 <img className='icon-desc' src={genreicon} alt='icon-location' />
