@@ -42,26 +42,36 @@ const AccomodationModal = (props) => {
                         />
                         <div className="modal__header">
                             <h4>{accomodation.namePackage}</h4>
-                            <div className='option-modal'>
-                                <div>
-                                    <h5>Quantité</h5>
-                                    <div className='select'>
-                                    <select onChange={(event) => handlePrice(event.target.value)}>
-                                        {available.map((place, index) => (
-                                            <option key={index} value={place}>{place}</option>
-                                        ))}
-                                    </select>
+                                {accomodation.airbnb === false ? (
+                                    <div className='option-modal'>
+                                        <div>
+                                        <h5>Quantité</h5>
+                                        <div className='select'>
+                                        <select onChange={(event) => handlePrice(event.target.value)}>
+                                            {available.map((place, index) => (
+                                                <option key={index} value={place}>{place}</option>
+                                            ))}
+                                        </select>
+                                        </div>
+                                        </div>
+                                        <div>
+                                            <h5>Prix</h5>
+                                            <p>{accomodation.price}€</p>
+                                        </div>
+                                        <div>
+                                            <h5>Prix avec tickets inclus</h5>
+                                            <p>{price}€</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div>
-                                    <h5>Prix</h5>
-                                    <p>{accomodation.price}€</p>
-                                </div>
-                                <div>
-                                    <h5>Prix Total</h5>
-                                    <p>{price}€</p>
-                                </div>
-                            </div>
+                                ) : (
+                                    <div className='option-modal'>
+                                        <div>
+                                                <h5>Prix Total</h5>
+                                                <p>{price}€</p>
+                                        </div>
+                                    </div>
+                                )}
+                                
                             <button>Ajouter au panier</button>
                         </div>
                     </div>

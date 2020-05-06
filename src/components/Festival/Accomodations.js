@@ -15,14 +15,14 @@ const Accomodations = props => {
         })
     }, [props.match.params.idfestival])
 
-    const accomodationNoAirbnb = accomodations.filter(accomodation => !accomodation.airbnb)
+    const accomodationNoAirbnb = accomodations.filter(accomodation => accomodation.airbnb === false)
 
     return(
         <div className='accomodations'>
             {accomodationNoAirbnb ?
                 <AccomodationContainer 
                 title="Dormez au coeur de la fête (ticket compris)" 
-                accomodations={accomodations}
+                accomodations={accomodationNoAirbnb}
                 />
                 :
                 <AccomodationContainer 
