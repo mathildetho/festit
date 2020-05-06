@@ -21,7 +21,7 @@ class CardSlide extends React.Component {
     }
 
     handleCard = (name) => {
-        this.props.history.push(`/Artists/${name}`)
+        this.props.history.push(`/Artistes/${name}`)
     }
       
     render() {

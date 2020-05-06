@@ -10,6 +10,7 @@ import ScrollToTop from './components/ScrollTopTop';
 
 import {Switch, Route} from 'react-router-dom';
 import Artists from './components/Artists';
+import Artist from './components/Artist/Artist';
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
         <Route exact path="/" component={Festivals} />
         <Route path="/Festival/:idfestival" component={Festival} />
         <Route exact path="/Artistes" component={Artists}/>
-        <Route path="/Artistes/:artistesIndex" />
+        <Route path="/Artistes/:name" component ={Artist} />
         <Route path="/A-propos" component={APropos} />
         <Route path="/Panier" /> 
       </Switch>
