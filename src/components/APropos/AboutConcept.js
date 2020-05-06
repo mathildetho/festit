@@ -6,9 +6,9 @@ import book from '../../img/bookit.png';
 import fest from '../../img/festit.png';
 
 const AboutConcept = () => {
-    const desc1 = 'Vous avez en tête un festival ? Là où vous voulez, on vous emmenera, bla bla blas';
-    const desc2 = 'Vous pouvez trouvez votre festival et réservez votre place directement';
-    const desc3 = 'Profitez à fond votre festival!'
+    const desc1 = 'Vous cherchez THE festival ? Vous êtes au bon endroit. Fest It est une plateforme qui vous permet de filtrer des festivals du monde entier selon vos envies. Une fois trouvé, vous n\'avez plus qu\'à...';
+    const desc2 = 'Réservez votre ticket et même votre hébergement en ligne en quelques clics. Il n\'y aura plus qu\'à attendre avec impatience avant de...';
+    const desc3 = 'Profiter à fond de cette expérience et fester comme il se doit, prết à recommencer encore et encore !'
 
     return(
         <div className='aboutcard' >

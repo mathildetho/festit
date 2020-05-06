@@ -3,7 +3,7 @@ import AccomodationModal from './AccomodationModal';
 
 const AccomodationCard = props => {
     const {accomodation, accomodationAirbnb} = props;
-
+    console.log(accomodation)
     return(
             <div className="accomodation-content">
             {accomodationAirbnb ? 
@@ -31,7 +31,9 @@ const AccomodationCard = props => {
                                 <p>disponibles</p>
                             </div>
                         </div>
-                        <button>Ajouter au panier</button>
+                        <AccomodationModal 
+                                accomodation={accomodationAirbnb}
+                            />
                     </div>
                 </div>
                 : 

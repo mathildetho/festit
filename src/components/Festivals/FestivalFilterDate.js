@@ -1,9 +1,9 @@
 import React from 'react';
 
 const FestivalFilterDate = (props) => {
-        const { festivals } = props;
-        return festivals.map((festival) =>
-            <option key={festival.idfestival} value={festival.startDate} >{festival.startDate}
+        const { date } = props;
+        return date.map((date, index) =>
+            <option key={index} value={date} >{date}
             </option>
         )
 }

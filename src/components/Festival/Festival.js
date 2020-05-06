@@ -37,7 +37,6 @@ const Festival = (props, history) => {
             />
             <Accomodations 
                 {...props} 
-                festival={festival} 
             />
         </div>
     </div>

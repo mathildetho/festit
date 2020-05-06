@@ -21,7 +21,7 @@ const Accomodations = props => {
         <div className='accomodations'>
             {accomodationNoAirbnb ?
                 <AccomodationContainer 
-                title="Dormez au coeur de la fête" 
+                title="Dormez au coeur de la fête (ticket compris)" 
                 accomodations={accomodations}
                 />
                 :

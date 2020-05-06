@@ -1,6 +1,7 @@
 import React from 'react';
 import FestivalDescription from './FestivalDescription';
 import ArtistsContainer from './ArtistsContainer';
+import TicketModal from './TicketModal';
 
 
 const FestivalCard = (props) => {
@@ -21,7 +22,9 @@ const FestivalCard = (props) => {
                 {...props} 
             />
             <div className='button-ticket'>
-               <button>Acheter un ticket</button>
+               <TicketModal 
+                   festival={festival}
+               />
            </div>
            </div>
         </div>

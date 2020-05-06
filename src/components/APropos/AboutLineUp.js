@@ -16,7 +16,7 @@ const AboutLineUp = () => {
             <div className='cards lineup' >
                 <AboutCard 
                     imgsrc={ben} 
-                    title='benoit' 
+                    title='Benoit' 
                     desc={desc1}
                     />
                 <AboutCard 

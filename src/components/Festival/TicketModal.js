@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './AccomodationModal.css';
 
-const AccomodationModal = (props) => {
-    const {accomodation} = props;
+const TicketModal = (props) => {
+    const {festival} = props;
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     
@@ -11,21 +11,11 @@ const AccomodationModal = (props) => {
     };
 
     let modalClass = isModalOpen ? 'modal' : 'modal closed';
-
-    let available = [];
-    for(let i=1; i<accomodation.numberPlace+1; i++) {
-        available.push(i);
-    }  
-
-    const [price, setPrice] = useState(accomodation.price);
-    const handlePrice = (event) => {
-        setPrice(accomodation.price*event)
-    }
     
     return (
         <>
             <button className="btn" onClick={() => handleModalOpen()} type="button">
-                Réserver
+                Acheter un ticket seul
             </button>
             <div
                 className={isModalOpen ? "modal-container" : "modal-container closed"}
@@ -37,29 +27,38 @@ const AccomodationModal = (props) => {
                     <div className='modal-content'>
                         <img
                             className="modal__img"
-                            src={accomodation.image1}
-                            alt={accomodation.namePackage}
+                            src={festival.image1}
+                            alt={festival.name}
                         />
                         <div className="modal__header">
-                            <h4>{accomodation.namePackage}</h4>
+                            <h4>{festival.name}</h4>
                             <div className='option-modal'>
                                 <div>
-                                    <h5>Quantité</h5>
-                                    <div className='select'>
-                                    <select onChange={(event) => handlePrice(event.target.value)}>
-                                        {available.map((place, index) => (
-                                            <option key={index} value={place}>{place}</option>
-                                        ))}
+                                    <h5>Choix du pass</h5>
+                                    <div className='select pass'>
+                                    <select >
+                                        <option value='Full' >Full pass</option>
+                                        <option value='Day' >Day pass</option>
                                     </select>
                                     </div>
                                 </div>
                                 <div>
-                                    <h5>Prix</h5>
-                                    <p>{accomodation.price}€</p>
+                                    <h5>Quantité</h5>
+                                    <div className='select'>
+                                    <select>
+                                        {/* {available.map((place, index) => (
+                                            <option key={index} value={place}>{place}</option>
+                                        ))} */}
+                                    </select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5>Prix par place</h5>
+                                    <p>000€</p>
                                 </div>
                                 <div>
                                     <h5>Prix Total</h5>
-                                    <p>{price}€</p>
+                                    <p>000€</p>
                                 </div>
                             </div>
                             <button>Ajouter au panier</button>
@@ -71,4 +70,4 @@ const AccomodationModal = (props) => {
     );
 }
 
-export default AccomodationModal;
+export default TicketModal;
