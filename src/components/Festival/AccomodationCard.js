@@ -2,8 +2,8 @@ import React from 'react';
 import AccomodationModal from './AccomodationModal';
 
 const AccomodationCard = props => {
-    const {accomodation, accomodationAirbnb} = props;
-    console.log(accomodation)
+    const {festival, accomodation, accomodationAirbnb} = props;
+    console.log(festival)
     return(
             <div className="accomodation-content">
             {accomodationAirbnb ? 
@@ -33,6 +33,7 @@ const AccomodationCard = props => {
                         </div>
                         <AccomodationModal 
                                 accomodation={accomodationAirbnb}
+                                festival={festival}
                             />
                     </div>
                 </div>
@@ -44,6 +45,7 @@ const AccomodationCard = props => {
                             <p>{accomodation.description}</p>
                         </div>
                         <div className='info-accomodation'>
+                         <div className="place-available">
                             <div className='place'>
                                 <p className='number'>{accomodation.numberPlace}</p>
                                 <p>couchages</p>
@@ -52,8 +54,10 @@ const AccomodationCard = props => {
                                 <p className='number'>{accomodation.placeAvailable}</p>
                                 <p>disponibles</p>
                             </div>
+                            </div>
                             <AccomodationModal 
                                 accomodation={accomodation}
+                                festival={festival}
                             />
                         </div>
                     </div>

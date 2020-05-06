@@ -2,22 +2,22 @@ import React from 'react';
 import AccomodationCard from './AccomodationCard';
 
 const AccomodationList = props => {
-    const {accomodation, accomodationAirbnb} = props;
+    const {festival,accomodations, accomodationNoAirbnb} = props;
 
     return (
             <div className="accomodation-container">
-              {accomodation ?
-                accomodation.map(acco => 
+              {accomodations ? //accomodationNoAirbnb
+                accomodations.map(acco => 
                 <AccomodationCard
                   accomodation={acco}
+                  festival={festival}
                 />)
-              : null }
-              {accomodationAirbnb ?
-                accomodationAirbnb.map(acco =>
+              :
+              accomodations.map(acco =>
               <AccomodationCard
-                  accomodationAirbnb={accomodationAirbnb}
+                  accomodationAirbnb={acco}
+                  festival={festival}
               />)
-              : null
               }
           </div>
     )

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './AccomodationModal.css';
+import TicketModal from './TicketModal';
 
 const AccomodationModal = (props) => {
-    const {accomodation} = props;
+    const {festival,accomodation} = props;
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     
@@ -16,12 +17,13 @@ const AccomodationModal = (props) => {
     for(let i=1; i<accomodation.numberPlace+1; i++) {
         available.push(i);
     }  
+    // accomodation.numberPlace => accomodation.placeAvailable
 
-    const [price, setPrice] = useState(accomodation.price);
+    const [price, setPrice] = useState(accomodation.passPrice);
     const handlePrice = (event) => {
-        setPrice(accomodation.price*event)
+        setPrice(accomodation.passPrice*event)
     }
-    
+
     return (
         <>
             <button className="btn" onClick={() => handleModalOpen()} type="button">
@@ -42,7 +44,8 @@ const AccomodationModal = (props) => {
                         />
                         <div className="modal__header">
                             <h4>{accomodation.namePackage}</h4>
-                                {accomodation.airbnb === false ? (
+                                {accomodation ?//accomodation.airbnb === false ?
+                                (<>
                                     <div className='option-modal'>
                                         <div>
                                         <h5>Quantité</h5>
@@ -55,24 +58,34 @@ const AccomodationModal = (props) => {
                                         </div>
                                         </div>
                                         <div>
-                                            <h5>Prix</h5>
+                                            <h5>Prix du logement</h5>
                                             <p>{accomodation.price}€</p>
                                         </div>
                                         <div>
                                             <h5>Prix avec tickets inclus</h5>
-                                            <p>{price}€</p>
+                                            <p>{accomodation.passPrice}€</p>
+                                        </div>
+                                        <div>
+                                                <h5>Prix Total</h5>
+                                                <p>{price}€</p>
                                         </div>
                                     </div>
+                                    <button>Ajouter au panier</button>
+                                    </>
                                 ) : (
+                                    <>
                                     <div className='option-modal'>
                                         <div>
                                                 <h5>Prix Total</h5>
                                                 <p>{price}€</p>
                                         </div>
                                     </div>
+                                    <button>Ajouter au panier</button>
+                                    <TicketModal 
+                                        festival={festival}
+                                    />
+                                    </>
                                 )}
-                                
-                            <button>Ajouter au panier</button>
                         </div>
                     </div>
                 </div>

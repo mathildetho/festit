@@ -29,8 +29,7 @@ const ArtistsContainer = (props) => {
                 infiniteScroll
                 media={{
                   "@media (max-width: 900px)": {
-                    width: '50%',
-                    height: "300px"
+                    height: "30vh"
                   },
                   "@media (min-width: 900px)": {
                     width: "90%",

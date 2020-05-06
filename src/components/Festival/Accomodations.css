@@ -153,3 +153,42 @@
     display: flex;
     justify-content: center;
 }
+
+.place-available {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 60%;
+}
+
+@media (max-width:1040px) {
+    .accomodation-content {
+        width:37vw;
+    }
+}
+
+@media (max-width:850px) {
+    .accomodation-content {
+        width:48vw;
+    }
+}
+
+@media (max-width:700px) {
+    .accomodation-content {
+        width:90%;
+    }
+}
+
+
+@media (max-width:500px) {
+    .info-accomodation {
+        flex-direction: column;
+    }
+    .place-available  {
+        width: 100%;
+        margin-bottom: 0.7rem;
+    }
+    .accomodation-content {
+        height: 80vh;
+    }
+}

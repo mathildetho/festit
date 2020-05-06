@@ -14,8 +14,9 @@ const TicketModal = (props) => {
     
     return (
         <>
+            {}
             <button className="btn" onClick={() => handleModalOpen()} type="button">
-                Acheter un ticket seul
+                Acheter un ticket
             </button>
             <div
                 className={isModalOpen ? "modal-container" : "modal-container closed"}
