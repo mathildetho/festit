@@ -7,10 +7,8 @@ import "./ArtistsContainer.css";
 
 
 const ArtistsContainer = (props) => {
-    const {festival} = props;
     const [artists, setArtists] = useState([]);
     
-    console.log(festival)
     useEffect(() => {
       const idfestival = props.match.params.idfestival;
       axios
@@ -20,6 +18,10 @@ const ArtistsContainer = (props) => {
           setArtists(data);
         });
     }, []);
+
+    const handleCardArtist = name => {
+      props.history.push(`/Artistes/${name}`);
+     };
 
     return (
       <StyleRoot>
@@ -40,7 +42,7 @@ const ArtistsContainer = (props) => {
               >
           {artists.map(artist => (
               
-                <div className="btn-coverflow">
+                <div className="btn-coverflow" onClick={() => handleCardArtist(artist.name)}>
                   <img className='img-artist' src={artist.image_url} alt='artist' /> 
                   <div className="artist-name">
                     <img src={Icon} alt="icon-titre" className="icon-titre" />
