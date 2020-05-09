@@ -27,9 +27,9 @@ const ArtistsContainer = (props) => {
       <StyleRoot>
         <Coverflow
                 displayQuantityOfSide={2}
-                navigation
                 infiniteScroll
-                enableHeading
+                navigation={false}
+                enableHeading={false}
                 media={{
                   "@media (max-width: 900px)": {
                     height: "30vh"

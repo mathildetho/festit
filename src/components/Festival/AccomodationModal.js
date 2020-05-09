@@ -43,7 +43,7 @@ const AccomodationModal = (props) => {
                         />
                         <div className="modal__header">
                             <h4>{accomodation.namePackage}</h4>
-                                {accomodation ?//accomodation.airbnb === false ?
+                                {accomodation.airbnb === 0 ?
                                 (<>
                                     <div className='option-modal'>
                                         <div>
@@ -69,7 +69,7 @@ const AccomodationModal = (props) => {
                                                 <p>{price}€</p>
                                         </div>
                                     </div>
-                                    <button>Ajouter au panier</button>
+                                    <button onClick={() => handleModalOpen()}>Ajouter au panier</button>
                                     </>
                                 ) : (
                                     <>
