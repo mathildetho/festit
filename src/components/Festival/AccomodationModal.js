@@ -19,11 +19,12 @@ const AccomodationModal = (props) => {
         available.push(i);
     }  
     
+    const [quantity, setQuantity] = useState(1);
     const [price, setPrice] = useState(accomodation.passPrice);
     const handlePrice = (event) => {
         setPrice(Number(accomodation.passPrice*event))
+        setQuantity(event)
     }
-
 
     const [cart, setCart] = useContext(ShopContext);
     const addToCart = () => {
@@ -33,7 +34,10 @@ const AccomodationModal = (props) => {
             description : accomodation.description,
             city: accomodation.city,
             country: accomodation.country,
-            image: accomodation.image1
+            image: accomodation.image1,
+            startDate: festival.startDate,
+            endDate:festival.endDate,
+            quantity: quantity
             };
         setCart(currentState => [...currentState, item]);
         //prend en compte les autres items et en rajoute un nouveau
@@ -64,14 +68,14 @@ const AccomodationModal = (props) => {
                                 (<>
                                     <div className='option-modal'>
                                         <div>
-                                        <h5>Quantité</h5>
-                                        <div className='select'>
-                                        <select onChange={(event) => handlePrice(event.target.value)}>
-                                            {available.map((place, index) => (
-                                                <option key={index} value={place}>{place}</option>
-                                            ))}
-                                        </select>
-                                        </div>
+                                            <h5>Quantité</h5>
+                                            <div className='select'>
+                                                <select onChange={(event) => handlePrice(event.target.value)}>
+                                                    {available.map((place, index) => (
+                                                        <option key={index} value={place}>{place}</option>
+                                                    ))}
+                                                </select>
+                                            </div>
                                         </div>
                                         <div>
                                             <h5>Prix du logement</h5>
@@ -86,7 +90,7 @@ const AccomodationModal = (props) => {
                                                 <p>{Number(price)}€</p>
                                         </div>
                                     </div>
-                                    <button onClick={addToCart} onClick={() => handleModalOpen()}>Ajouter au panier</button>
+                                    <button onClick={() => {addToCart();handleModalOpen();}} >Ajouter au panier</button>
                                     </>
                                 ) : (
                                     <>
@@ -96,7 +100,7 @@ const AccomodationModal = (props) => {
                                                 <p>{price}€</p>
                                         </div>
                                     </div>
-                                    <button onClick={addToCart}>Ajouter au panier</button>
+                                    <button onClick={() => addToCart()}>Ajouter au panier</button>
                                     <TicketModal 
                                         festival={festival}
                                     />

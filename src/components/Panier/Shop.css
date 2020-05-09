@@ -91,6 +91,16 @@
     width: 35%;
 }
 
+.icon-date {
+    width:100%;
+    display:flex;
+    align-items: center;
+    margin: 0.5rem 0;
+}
+.icon-date p {
+    margin:0
+}
+
 .icon-product img {
     widows: 1.5rem;
     height: 1.5rem;
@@ -100,10 +110,12 @@
 .desc-product p {
     font-size: 0.9rem;
     text-align: left;
+    margin-bottom:0;
 }
 
 .choice-product {
     display: flex;
+    flex-direction: row;
     width: 80%;
     justify-content: space-between;
 }

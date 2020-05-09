@@ -1,9 +1,12 @@
 import React from 'react';
 import location from '../../img/location.png';
-import arrow from '../../img/arrow.png';
+import date from '../../img/date.png';
 
 const Shop = (props) => {
     const {cart} = props
+    const startDate = new Date(cart.map(item=>item.startDate))
+    const endDate = new Date(cart.map(item=>item.endDate))
+    console.log(startDate)
     return (
         <>
         {cart.map(item => (
@@ -14,19 +17,18 @@ const Shop = (props) => {
                         <div className='title-product'>
                             <h4>{item.name}</h4>
                             <div className='icon-product'>
-                                <img src={location} alt='emplacement' />
+                                <img src={location} alt='emplacement' className='icon-desc'/>
                                 <p>{item.city}, {item.country}</p>
                             </div>
                         </div>
                         <p>{item.description}</p>
+                        <div className='icon-date'>
+                            <img src={date} alt='date' className='icon-desc'/>
+                            <p>du {startDate.toLocaleDateString()} au {endDate.toLocaleDateString()}</p>
+                        </div>
                     </div>
                     <div className="choice-product" >
-                        <select>
-                            <option >date</option>
-                        </select>
-                        <select>
-                            <option >quantité</option>
-                        </select>
+                        <p>Quantité: {item.quantity}</p>
                         <button><img src='#' alt='delete'/></button>
                     </div>
                     <div className='total' >

@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
+import {ShopContext} from '../Panier/ShopContext';
 import './AccomodationModal.css';
 
 const TicketModal = (props) => {
@@ -38,12 +39,33 @@ const TicketModal = (props) => {
         setDesc(tickets.filter(ticket => ticket.type === e).map(ticket => ticket.description))
     }
 
+    const [quantity, setQuantity] = useState(1);
     const [priceTotal, setPriceTotal] = useState();
     useEffect(() => {
         setPriceTotal(price)
      },[price])
     const handlePriceTotal = (e) => {
         setPriceTotal(price*e)
+        setQuantity(e)
+    }
+
+
+    const [cart, setCart] = useContext(ShopContext);
+    const addToCart = () => {
+        const item = {
+            name: `Ticket ${festival.name}`,
+            price:priceTotal,
+            description : festival.description,
+            city: festival.city,
+            country: festival.country,
+            image: festival.image1,
+            startDate: festival.startDate,
+            endDate:festival.endDate,
+            quantity:quantity
+            };
+        setCart(currentState => [...currentState, item]);
+        //prend en compte les autres items et en rajoute un nouveau
+        console.log(cart)
     }
 
     return (
@@ -96,7 +118,7 @@ const TicketModal = (props) => {
                                         <p>{priceTotal}€</p>
                                     </div>
                             </div>
-                            <button onClick={() => handleModalOpen()}>Ajouter au panier</button>
+                            <button onClick={() => {addToCart();handleModalOpen();}} >Ajouter au panier</button>
                         </div>
                     </div>
                 </div>
