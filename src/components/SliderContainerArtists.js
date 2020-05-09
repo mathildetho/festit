@@ -1,20 +1,20 @@
 import React from "react";
 import axios from "axios";
 import Slider from "react-slick";
-import './SliderContainer.css';
-import { Link } from "react-router-dom";
+import './Festivals/Slider/SliderContainer.css';
 
-class SliderContainer extends React.Component {
+
+class SliderContainerArtists extends React.Component {
   state = {
-    festivals: []
+    artists: []
   };
 
   componentDidMount() {
     axios
-      .get("https://api-festit.herokuapp.com/api/festival")
+      .get("https://api-festit.herokuapp.com/api/artists")
       .then(res => res.data)
       .then(data => {
-        this.setState({ festivals: data });
+        this.setState({ artists: data });
       });
   };
 
@@ -31,19 +31,19 @@ class SliderContainer extends React.Component {
       speed:1000
     };
 
-    const { festivals } = this.state;
+    const { artists } = this.state;
 
     return (
         <Slider className='slidercontainer' {...settings} ref={slider => (this.slider = slider)}>
-          {festivals.slice(0, 3).map(festival => (
-            <div className="slide" key={festival.idfestival}>
-              <img src={festival.image1} alt={festival.name} />
+          {artists.slice(0, 3).map((artist, index) => (
+            <div className="slide" key={index}>
+              <img src={artist.image_url} alt={artist.name} />
               <div className="inner">
                 <div className="name">
                   <span className="line" />
-                  <h3>{festival.name}</h3>
+                  <h3>{artist.name}</h3>
                 </div>
-                <Link to={`/Festival/${festival.idfestival}`}><button className="button">En savoir plus</button></Link>
+                <button className="button">En savoir plus</button>
               </div>
             </div>
           ))}
@@ -52,4 +52,4 @@ class SliderContainer extends React.Component {
   }
 }
 
-export default SliderContainer;
+export default SliderContainerArtists;

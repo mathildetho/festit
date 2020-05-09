@@ -6,10 +6,6 @@ import Icon from '../../img/icon-titre.png';
 import Genre from '../../img/genre.png';
 
 
-
-
-
-
 class CardSlide extends React.Component {
     
     state= {
@@ -17,21 +13,16 @@ class CardSlide extends React.Component {
         displayArtist: ''
     }
     componentDidMount() {
-        axios.get('https://api-festival.herokuapp.com/api/artists')
+        axios.get('https://api-festit.herokuapp.com/api/artists')
         .then(response => response.data)
         .then(data => {
             this.setState({artists: data})
         })
     }
 
-    // getDisplayArtist = () => {
-    //     this.setState({ artist: idartist })
-    // }
-
-    // handleShowSimpsonsOnlyClick() {
-    //     this.setState({ simpsonsOnly: !this.state.simpsonsOnly });
-    //   }
-    
+    handleCard = (name) => {
+        this.props.history.push(`/Artistes/${name}`)
+    }
       
     render() {
         const settings = {
@@ -43,16 +34,33 @@ class CardSlide extends React.Component {
             speed: 100,
             rows: 2,
             slidesPerRow: 1,
-            slidesToScroll: 4     
+            slidesToScroll: 4,
+            responsive: [
+                {
+                    breakpoint: 1180,
+                    settings: {
+                        slidesToShow: 3,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 650,
+                    settings: {
+                        slidesToShow: 2,
+                        dots: true
+                    }
+                }
+            ]          
         };
 
         const {artists} = this.state;
+
 
         return (
             <div className='Container'>
                 {artists && <Slider {...settings}>
                     {artists.filter(artist => artist).map((artist, index) => (
-                        <div className= "Slide" key= {index}>
+                        <button className= "Slide" key= {index} onClick={() => this.handleCard(artist.name)}> 
                             <div className='artistCard'
                                  style={{ background: `center /cover no-repeat url('${artist.image_url}')` }}>
                                 <div className= 'artistCard-title'>
@@ -61,20 +69,10 @@ class CardSlide extends React.Component {
                                     alt='icon-titre'
                                     className='icon-titre'
                                 />
-                                <h5>{artist.name}</h5>
+                                <h5 className='artistCard-name'>{artist.name}</h5>
                                 </div>
-                                <div className ='artist-genre'>
-                                <img 
-                                    src= { Genre }
-                                    alt=' icon-genre'
-                                    className='icon-titre'
-                                />
-                                </div>
-                                
-                           
-                           
                             </div>
-                        </div>
+                        </button>
                     
                 ))}
                 
