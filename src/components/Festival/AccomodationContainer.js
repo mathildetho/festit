@@ -2,15 +2,12 @@ import React from 'react';
 import AccomodationList from './AccomodationList';
 
 const AccomodationContainer = props => {
-    const {festival,accomodations, accomodationNoAirbnb} = props;
-
-    // const accomodationAirbnb = accomodations.filter(accomodation => accomodation.airbnb);
-    // const accomodation = accomodations.filter(accomodation => !accomodation.airbnb);
+    const {festival,accomodationAirbnb, accomodationNoAirbnb} = props;
 
     return(
         <div className={props.img ? 'accomodation airbnb-bg': 'accomodation'}>
             <h3>{props.title}</h3>
-            {accomodationNoAirbnb ? 
+            {accomodationAirbnb ? 
             <>
             <div className='partenariat'>
                 <h4>{props.subtitle}</h4>
@@ -18,14 +15,13 @@ const AccomodationContainer = props => {
             </div> 
             <AccomodationList 
                 img={props.img} 
-                accomodations={accomodations}
+                accomodationAirbnb={accomodationAirbnb}
                 festival={festival}
             />
             </>
             : <AccomodationList 
-                accomodations={accomodations}
+                accomodationNoAirbnb={accomodationNoAirbnb}
                 festival={festival}
-                //accomodationNoAirbnb={accomodationNoAirbnb}
             />}
         </div>
     )

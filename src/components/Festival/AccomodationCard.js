@@ -3,10 +3,12 @@ import AccomodationModal from './AccomodationModal';
 
 const AccomodationCard = props => {
     const {festival, accomodation, accomodationAirbnb} = props;
-    console.log(festival)
+    console.log(accomodationAirbnb)
+    
     return(
-            <div className="accomodation-content">
+           <> 
             {accomodationAirbnb ? 
+                <div className="accomodation-content airbnb">
                 <div className='all-content'>
                     <img src={accomodationAirbnb.image1} alt={accomodationAirbnb.namePackage} className='img-accomodation' />
                     <div className='desc-accomodation'>
@@ -37,7 +39,9 @@ const AccomodationCard = props => {
                             />
                     </div>
                 </div>
+                </div>
                 : 
+                <div className="accomodation-content">
                     <div className='all-content'>
                         <img src={accomodation.image1} alt={accomodation.namePackage} className='img-accomodation' />
                         <div className='desc-accomodation'>
@@ -61,8 +65,9 @@ const AccomodationCard = props => {
                             />
                         </div>
                     </div>
+                </div>
                 }   
-          </div>
+          </>
     )
 }
 

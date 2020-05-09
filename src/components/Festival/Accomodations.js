@@ -16,24 +16,23 @@ const Accomodations = props => {
         })
     }, [props.match.params.idfestival])
 
-    const accomodationNoAirbnb = accomodations.filter(accomodation => accomodation.airbnb === false)
+    const accomodationNoAirbnb = accomodations.filter(accomodation => !accomodation.airbnb)
+    const accomodationAirbnb = accomodations.filter(accomodation => accomodation.airbnb);
 
     return(
         <div className='accomodations'>
-            {accomodationNoAirbnb ?
                 <AccomodationContainer 
                 title="Dormez au coeur de la fête (ticket compris)" 
-                accomodations={accomodations} //accomodationNoAirbnb={accomododationNoAirbnb}
+                accomodationNoAirbnb={accomodationNoAirbnb}
                 festival={festival}
                 />
-                :
                 <AccomodationContainer 
                 title="Le luxe à portée de main" 
                 subtitle='En partenariat avec'
                 img={airbnb}
-                accomodations={accomodations}
+                accomodationAirbnb={accomodationAirbnb}
                 festival={festival}
-                />}
+                />
         </div>
     )
 }

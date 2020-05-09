@@ -8,9 +8,7 @@ import genre from '../../img/genre.png';
 import './Filter.css';
 
 const FestivalFilter = (props) => {
-    const {festivals, filterGenre, filterLocation, filterDate, genres, location, date } = props;
-
-  
+    const {filterGenre, filterLocation, filterDate, genres, location, date } = props;
 
     return (
         <>

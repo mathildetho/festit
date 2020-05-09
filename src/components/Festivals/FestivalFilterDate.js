@@ -2,9 +2,12 @@ import React from 'react';
 
 const FestivalFilterDate = (props) => {
         const { date } = props;
-        return date.map((date, index) =>
-            <option key={index} value={date} >{date}
-            </option>
+        
+        return date.map((date, index) =>{
+            let greatDate  = date.split('-').reverse().join('-');
+            console.log(date)
+            return <option key={index} value={date} >{greatDate}
+            </option>}
         )
 }
 

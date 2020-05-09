@@ -9,7 +9,6 @@ const FestivalsContainer= (props)=> {
   };
 
     const settings = {
-      className: "center",
       centerMode: false,
       infinite: false,
       dots: true,
@@ -48,7 +47,7 @@ const FestivalsContainer= (props)=> {
 
     return (
       <div className="Container">
-        {props.festivals && (
+        {props.festivals.length >=1 ? (
           <Slider {...settings}>
             {props.festivals
               .map(festival => (
@@ -75,7 +74,9 @@ const FestivalsContainer= (props)=> {
                 </button>
               ))}
           </Slider>
-        )}
+        )
+        :
+        <p className='no-festival'>Désolé, pour le moment, nous n'avons pas de festival disponible pour ce que vous recherchez.</p>}
       </div>
     );
   }

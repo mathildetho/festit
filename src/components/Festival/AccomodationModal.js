@@ -14,11 +14,10 @@ const AccomodationModal = (props) => {
     let modalClass = isModalOpen ? 'modal' : 'modal closed';
 
     let available = [];
-    for(let i=1; i<accomodation.numberPlace+1; i++) {
+    for(let i=1; i<accomodation.placeAvailable+1; i++) {
         available.push(i);
     }  
-    // accomodation.numberPlace => accomodation.placeAvailable
-
+    
     const [price, setPrice] = useState(accomodation.passPrice);
     const handlePrice = (event) => {
         setPrice(accomodation.passPrice*event)

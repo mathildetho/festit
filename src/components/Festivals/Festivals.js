@@ -13,14 +13,12 @@ const Festivals = (props,history) => {
     }, [])
     
     const refreshFestivals = () => {
-
         axios.get('https://api-festit.herokuapp.com/api/festival')
         .then(response => response.data)
         .then(data => {
             setFestivals(data)
         })
     }
-
 
     //filtering genre
     // all genres
@@ -38,8 +36,7 @@ const Festivals = (props,history) => {
         if(genre === 'Tous') {
             refreshFestivals()
         } else {
-            // const idfestival = festivals.map(festival => festival.idfestival);
-            axios.get(`https://api-festit.herokuapp.com/api/festival/${genre}`)
+            axios.get(`https://api-festit.herokuapp.com/api/festival/style/${genre}`)
             .then(response => response.data)
             .then(data => {
                 setFestivals(data)
@@ -55,27 +52,24 @@ const Festivals = (props,history) => {
     useEffect(() => {
         axios.get('https://api-festit.herokuapp.com/api/festival')
         .then(response => response.data)
+        .then(data => data.map(festival => festival.country).sort())
         .then(data => {
-            setLocation(data.map(festival => festival.country))
+            setLocation([...new Set(data)])
         })
     }, [])
 
     //filter location
     const filterLocation = (location) => {
-
-        // const locationFest = festivals.filter(festival => festival.country.includes(location));
         if(location ==="Partout") {
             refreshFestivals()
         } else {
-            axios.get(`https://api-festit.herokuapp.com/api/festival/${location}`)
+            axios.get(`https://api-festit.herokuapp.com/api/festival/country/${location}`)
             .then(response => response.data)
             .then(data => {
                 setFestivals(data)
             })
         }
-
     }
-
 
     //filtering date
     //all dates
@@ -83,24 +77,31 @@ const Festivals = (props,history) => {
     useEffect(() => {
         axios.get('https://api-festit.herokuapp.com/api/festival')
         .then(response => response.data)
+        // .then(data => data.map(festival => {
+        //     const startDate = new Date(festival.startDate)
+        //     return startDate.getFullYear()
+        // }).sort())
+        .then(data => data.map(festival => festival.startDate).sort())
         .then(data => {
-            setDate(data.map(festival => festival.startDate))
+            setDate([...new Set(data)])
         })
     }, [])
 
     //filter Date
     const filterDate = (date) => {
-        // const dateFest = festivals.filter(festival => festival.startDate.includes(date));
         if(date ==="N'importe quand") {
             refreshFestivals()
         } else {
-            axios.get(`https://api-festit.herokuapp.com/api/festival/${date}`)
+            // const year = festivals.filter(festival => festival.startDate.includes(date))
+            // setFestivals(year)
+            axios.get(`https://api-festit.herokuapp.com/api/festival/date/${date}`)
             .then(response => response.data)
-            .then(data => {
-                setFestivals(data)
-            })
+            .then(data => {setFestivals(data)})
         }
     }
+
+
+
 
     return (
         <div>
