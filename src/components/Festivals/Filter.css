@@ -94,3 +94,75 @@
      height: 2rem;
     padding-right: 1rem;
  }
+
+ @media (max-width:1360px) {
+     .Filter {
+        width: 65%;
+     }
+ }
+
+ @media (max-width:1250px) {
+    .Filter {
+       width: 75%;
+    }
+}
+@media (max-width:1090px) {
+    .Filter {
+       width: 85%;
+    }
+}
+
+@media (max-width:960px) {
+    .Filter {
+       width: 90%;
+    }
+}
+
+@media (max-width:960px) {
+    .Filter {
+        flex-direction: column;
+    }
+    .select.location, .select.date, .select.genre {
+        border-radius: 30px;
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+    .select.location::after {
+        right: 1rem;
+    }
+}
+
+@media (max-width:760px) {
+    .select {
+        width:40%
+    }
+}
+
+@media (max-width:660px) {
+    .select {
+        width:50%
+    }
+}
+
+
+@media (max-width:490px) {
+    .select {
+        width:70%
+    }
+}
+
+@media (max-width:350px) {
+    .Filter .icon-desc {
+        width: 1rem;
+    }
+    .select.location, .select.date, .select.genre {
+        padding-right: 1.2rem;
+        padding-left: 1.2rem;
+    }
+    .filter-title {
+        font-size:0.9rem
+    }
+    .select select {
+        font-size: 0.8rem;
+    }
+}
