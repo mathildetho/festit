@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './AccomodationModal.css';
 import TicketModal from './TicketModal';
+import {ShopContext} from '../Panier/ShopContext';
 
 const AccomodationModal = (props) => {
     const {festival,accomodation} = props;
@@ -20,7 +21,23 @@ const AccomodationModal = (props) => {
     
     const [price, setPrice] = useState(accomodation.passPrice);
     const handlePrice = (event) => {
-        setPrice(accomodation.passPrice*event)
+        setPrice(Number(accomodation.passPrice*event))
+    }
+
+
+    const [cart, setCart] = useContext(ShopContext);
+    const addToCart = () => {
+        const item = {
+            name: accomodation.namePackage,
+            price:price,
+            description : accomodation.description,
+            city: accomodation.city,
+            country: accomodation.country,
+            image: accomodation.image1
+            };
+        setCart(currentState => [...currentState, item]);
+        //prend en compte les autres items et en rajoute un nouveau
+        console.log(cart)
     }
 
     return (
@@ -66,10 +83,10 @@ const AccomodationModal = (props) => {
                                         </div>
                                         <div>
                                                 <h5>Prix Total</h5>
-                                                <p>{price}€</p>
+                                                <p>{Number(price)}€</p>
                                         </div>
                                     </div>
-                                    <button>Ajouter au panier</button>
+                                    <button onClick={addToCart}>Ajouter au panier</button>
                                     </>
                                 ) : (
                                     <>
@@ -79,7 +96,7 @@ const AccomodationModal = (props) => {
                                                 <p>{price}€</p>
                                         </div>
                                     </div>
-                                    <button>Ajouter au panier</button>
+                                    <button onClick={addToCart}>Ajouter au panier</button>
                                     <TicketModal 
                                         festival={festival}
                                     />

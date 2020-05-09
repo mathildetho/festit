@@ -12,6 +12,7 @@ import ScrollToTop from './components/ScrollTopTop';
 import {Switch, Route} from 'react-router-dom';
 import Artists from './components/Artists';
 import Artist from './components/Artist/Artist';
+import {CartProvider} from './components/Panier/ShopContext';
 
 const App = () => {
 
@@ -36,19 +37,21 @@ const App = () => {
   // a envoyer a la page panier
 
   return (
-    <div className="App">
-      <Header />
-      <ScrollToTop />
-      <Switch>
-        <Route exact path="/" component={Festivals} />
-        <Route path="/Festival/:idfestival" component={Festival} />
-        <Route exact path="/Artistes" component={Artists}/>
-        <Route path="/Artistes/:name" component ={Artist} />
-        <Route path="/A-propos" component={APropos} />
-        <Route path="/Panier" component={ShopContainer} /> 
-      </Switch>
-      < Footer />
-    </div>
+    <CartProvider>
+      <div className="App">
+        <Header />
+        <ScrollToTop />
+        <Switch>
+          <Route exact path="/" component={Festivals} />
+          <Route path="/Festival/:idfestival" component={Festival} />
+          <Route exact path="/Artistes" component={Artists}/>
+          <Route path="/Artistes/:name" component ={Artist} />
+          <Route path="/A-propos" component={APropos} />
+          <Route path="/Panier" component={ShopContainer} /> 
+        </Switch>
+        < Footer />
+      </div>
+    </CartProvider>
   );
 }
 

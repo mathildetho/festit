@@ -3,20 +3,22 @@ import location from '../../img/location.png';
 import arrow from '../../img/arrow.png';
 
 const Shop = (props) => {
-
+    const {cart} = props
     return (
+        <>
+        {cart.map(item => (
             <div className='product-container'>
-                <div className="img-product" />
+                <img src={item.image} alt={item.name} className="img-product" />
                 <div className='info-product'>
                     <div className='desc-product'>
                         <div className='title-product'>
-                            <h4>product name</h4>
+                            <h4>{item.name}</h4>
                             <div className='icon-product'>
                                 <img src={location} alt='emplacement' />
-                                <p>city, country</p>
+                                <p>{item.city}, {item.country}</p>
                             </div>
                         </div>
-                        <p>Description product Victus universis caro ferina est lactisque abundans copia qua sustentantur, et herbae multiplices et siquae alites capi per aucupium possint, et plerosque mos vidimus frumenti usum et vini penitus ignorantes.</p>
+                        <p>{item.description}</p>
                     </div>
                     <div className="choice-product" >
                         <select>
@@ -29,10 +31,12 @@ const Shop = (props) => {
                     </div>
                     <div className='total' >
                         <h4>Sous-total</h4>
-                        <h4>000€</h4>
+                        <h4>{item.price}€</h4>
                     </div>
                 </div>
             </div>
+        )) }
+        </>
     )
 }
 

@@ -22,7 +22,7 @@ function Menu({ open, setOpen }) {
       <nav className="Nav">
         <Link id="logo" to="/"><img className="logo" src={logo} alt="logo Fest It" /></Link>
         <ul className="menu">
-          <li><NavLink activeClassName="active-link" id="title" to="/">Festivals</NavLink></li>
+          <li><NavLink exact activeClassName="active-link" id="title" to="/">Festivals</NavLink></li>
           <li>
             <a id="title" href="#">
               Artistes
