@@ -27,6 +27,7 @@ const ArtistsContainer = (props) => {
                 displayQuantityOfSide={2}
                 navigation
                 infiniteScroll
+                enableHeading
                 media={{
                   "@media (max-width: 900px)": {
                     height: "30vh"
