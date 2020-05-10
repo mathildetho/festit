@@ -23,7 +23,7 @@ const TicketModal = (props) => {
             .then(data => {
                 setTickets(data)
             })
-    }, [props])
+    }, [festival.idfestival])
 
     const [desc, setDesc] = useState();
     useEffect(() => {

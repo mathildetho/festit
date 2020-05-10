@@ -16,7 +16,7 @@ const ShopList = (props) => {
             :
             <div>
                 <p className='length-cart'>Votre panier est vide, il est temps d'y remédier !</p>
-                <img className='gif-cart' src='https://media.giphy.com/media/m6aIggqT7oB4A/source.gif'/>
+                <img className='gif-cart' alt='gif-cart' src='https://media.giphy.com/media/m6aIggqT7oB4A/source.gif'/>
             </div>
         }
         </>

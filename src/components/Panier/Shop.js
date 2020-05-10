@@ -5,9 +5,6 @@ import supp from '../../img/delete.png';
 
 const Shop = (props) => {
     const {cart, setCart} = props
-    const startDate = new Date(cart.filter(item=>item.startDate))
-    const endDate = new Date(cart.map(item=>item.endDate))
-
     const deleteItem = (name) => {
         const deleteItemArray = cart.filter(item => item.name !== name)
         setCart(deleteItemArray)

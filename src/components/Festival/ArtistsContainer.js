@@ -24,7 +24,6 @@ const ArtistsContainer = (props) => {
      };
 
     return (
-      <StyleRoot>
         <Coverflow
                 displayQuantityOfSide={2}
                 infiniteScroll
@@ -42,7 +41,7 @@ const ArtistsContainer = (props) => {
               >
           {artists.map(artist => (
               
-                <div className="btn-coverflow" onClick={() => handleCardArtist(artist.name)}>
+                <div key={artist.idartist} className="btn-coverflow" onClick={() => handleCardArtist(artist.name)}>
                   <img className='img-artist' src={artist.image_url} alt='artist' /> 
                   <div className="artist-name">
                     <img src={Icon} alt="icon-titre" className="icon-titre" />
@@ -52,7 +51,6 @@ const ArtistsContainer = (props) => {
               
           ))}
           </Coverflow>
-      </StyleRoot>
     );
 };
   

@@ -198,3 +198,44 @@
     -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
     filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
   }
+
+
+@media (max-width:1190px) {
+    .title-product {
+        flex-direction: column;
+        text-align: left;
+        align-items: baseline;
+    }   
+}
+@media (max-width:900px) {
+    .product-container {
+        flex-direction: column;
+    }
+    .img-product {
+        margin: 3rem auto 0;
+        width:80%;
+        height: 20vh;
+    }
+    .info-product {
+        margin: 1rem auto;
+        width:70%
+    }
+}
+@media (max-width:800px) {
+    .length-cart, .gif-cart {
+        width: 80%
+    }
+}
+
+@media (max-width:640px) {
+    .total {
+        float: none;
+        margin: 1rem auto;
+    }
+}
+
+@media (max-width:410px) {
+    .total {
+        width:10rem
+    }
+}

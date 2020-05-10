@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
 
 import Header from './components/Header/Header';
@@ -15,27 +15,6 @@ import Artist from './components/Artist/Artist';
 import {CartProvider} from './components/Panier/ShopContext';
 
 const App = () => {
-
-  // const [cartItems, setCartItems] = useState([])
-
-  // const addToCart = (key, name, amount) => {
-  //   if (cartItems.indexOf(key) < 0) {
-  //     const cartItems = cartItems.concat({
-  //       key: key,
-  //       name: name,
-  //       amount: amount
-  //     });
-  //     setCartItems({ cartItems });
-  //   }
-  // };
-  // a envoyer à la page festival boutton ajouter au panier
-
-  // const removeFromCart = key => {
-  //   const cartItems = cartItems.filter(item => item.key !== key);
-  //   setCartItems({ cartItems });
-  // };
-  // a envoyer a la page panier
-
   return (
     <CartProvider>
       <div className="App">
