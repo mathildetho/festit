@@ -8,8 +8,6 @@ import {ShopContext} from './ShopContext';
 
 const ShopContainer = (props) => {
 
-    // const total = props.cartitems.reduce((acc, curr) => {return curr.amount + acc}, 0)
-
     const [cart, setCart] = useContext(ShopContext);
     const totalPrice = cart.reduce((acc, curr) => acc+Number(curr.price), 0)
 
@@ -22,7 +20,10 @@ const ShopContainer = (props) => {
                 </div>
                 {cart.length >0 ?
                 <div className='content-shop'>
-                 <ShopList  cart={cart}/>
+                 <ShopList  
+                    cart={cart}
+                    setCart={setCart}
+                    />
                  <ShopTotal 
                         cart={cart}
                         totalPrice={totalPrice}

@@ -32,8 +32,8 @@ const AccomodationModal = (props) => {
             name: accomodation.namePackage,
             price:price,
             description : accomodation.description,
-            city: accomodation.city,
-            country: accomodation.country,
+            city: festival.city,
+            country: festival.country,
             image: accomodation.image1,
             startDate: festival.startDate,
             endDate:festival.endDate,
@@ -41,7 +41,6 @@ const AccomodationModal = (props) => {
             };
         setCart(currentState => [...currentState, item]);
         //prend en compte les autres items et en rajoute un nouveau
-        console.log(cart)
     }
 
     return (

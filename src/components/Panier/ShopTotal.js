@@ -3,7 +3,6 @@ import arrow from '../../img/arrow.png';
 
 const ShopTotal = (props) => {
     const {totalPrice} = props;
-    console.log(totalPrice)
     return (
             <div className='totalpay'>
                 <div className='total total-all' >

@@ -65,7 +65,6 @@ const TicketModal = (props) => {
             };
         setCart(currentState => [...currentState, item]);
         //prend en compte les autres items et en rajoute un nouveau
-        console.log(cart)
     }
 
     return (

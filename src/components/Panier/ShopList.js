@@ -2,7 +2,7 @@ import React from 'react';
 import Shop from './Shop';
 
 const ShopList = (props) => {
-    const {cart} =props
+    const {cart, setCart} =props
     return (
         <>
         {cart.length >0 ? 
@@ -10,10 +10,14 @@ const ShopList = (props) => {
                 <p className='length-cart'>Vous avez {cart.length} produit dans votre panier</p>
                 <Shop 
                     cart={cart}
+                    setCart={setCart}
                 />
             </>
             :
-            <p className='length-cart'>Votre panier est vide, il est temps d'y remédier !</p>
+            <div>
+                <p className='length-cart'>Votre panier est vide, il est temps d'y remédier !</p>
+                <img className='gif-cart' src='https://media.giphy.com/media/m6aIggqT7oB4A/source.gif'/>
+            </div>
         }
         </>
     )

@@ -28,6 +28,9 @@
     align-items: center;
     padding-top: 2em;
 }
+.gif-cart {
+    border-radius: 30px;
+}
 
 /*Shoplist */
 .length-cart {
@@ -50,6 +53,9 @@
     margin:0.9rem 0.5rem;
 }
 
+.icon-desc {
+    margin-right: 0.5rem;
+}
 .product-container {
     background-color: #fff;
     width:80%;
@@ -88,7 +94,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 35%;
 }
 
 .icon-date {
@@ -115,9 +120,25 @@
 
 .choice-product {
     display: flex;
-    flex-direction: row;
-    width: 80%;
-    justify-content: space-between;
+    align-items: center;
+}
+
+.choice-product p {
+    margin:0;
+    margin-right: 1rem;
+}
+
+.choice-product button {
+    border:none;
+    background-color: #f9b256;
+    border-radius: 30px;
+    padding: 0.2rem 0.5rem;
+}
+.choice-product button:hover {
+    cursor: pointer;
+}
+.choice-product img {
+    margin:auto
 }
 
 .total {

@@ -1,16 +1,24 @@
 import React from 'react';
-import location from '../../img/location.png';
-import date from '../../img/date.png';
+import location from '../../img/location-purple.png';
+import date from '../../img/date-purple.png';
+import supp from '../../img/delete.png';
 
 const Shop = (props) => {
-    const {cart} = props
-    const startDate = new Date(cart.map(item=>item.startDate))
+    const {cart, setCart} = props
+    const startDate = new Date(cart.filter(item=>item.startDate))
     const endDate = new Date(cart.map(item=>item.endDate))
-    console.log(startDate)
+
+    const deleteItem = (name) => {
+        const deleteItemArray = cart.filter(item => item.name !== name)
+        setCart(deleteItemArray)
+    };
+
+    console.log(cart)
+
     return (
         <>
-        {cart.map(item => (
-            <div className='product-container'>
+        {cart.map((item, index) => (
+            <div className='product-container' key={index}>
                 <img src={item.image} alt={item.name} className="img-product" />
                 <div className='info-product'>
                     <div className='desc-product'>
@@ -24,12 +32,12 @@ const Shop = (props) => {
                         <p>{item.description}</p>
                         <div className='icon-date'>
                             <img src={date} alt='date' className='icon-desc'/>
-                            <p>du {startDate.toLocaleDateString()} au {endDate.toLocaleDateString()}</p>
+                            <p>du {new Date(item.startDate).toLocaleDateString()} au {new Date(item.endDate).toLocaleDateString()}</p>
                         </div>
                     </div>
                     <div className="choice-product" >
                         <p>Quantité: {item.quantity}</p>
-                        <button><img src='#' alt='delete'/></button>
+                        <button onClick={() => deleteItem(item.name)}><img className='icon-desc' src={supp} alt='icon-delete'/></button>
                     </div>
                     <div className='total' >
                         <h4>Sous-total</h4>
