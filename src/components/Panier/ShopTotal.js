@@ -1,5 +1,5 @@
 import React from 'react';
-import arrow from '../../img/arrow.png';
+import ShopModal from './ShopModal';
 
 const ShopTotal = (props) => {
     const {totalPrice} = props;
@@ -9,7 +9,9 @@ const ShopTotal = (props) => {
                     <h4>Total</h4>
                     <h4>{totalPrice}€</h4>
                 </div>
-                <button>Paiement<img src={arrow} alt='paiement' className='arrow-pay'/></button>
+                <ShopModal 
+                    totalPrice={totalPrice}
+                />
             </div>
     )
 }
