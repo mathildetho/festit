@@ -17,7 +17,7 @@ import {CartProvider} from './components/Panier/ShopContext';
 
 const App = () => {
   return (
-    <CartProvider>
+    <CartProvider >
       <div className="App">
         <Header />
         <ScrollToTop />
@@ -25,10 +25,10 @@ const App = () => {
           <Route exact path="/" component={Festivals} />
           <Route path="/Festival/:idfestival" component={Festival} />
           <Route exact path="/Artistes" component={Artists}/>
-          <Route path="/Artistes/:name" component ={Artist} />
+          <Route path="/Artistes/:id" component ={Artist} />
           <Route path="/A-propos" component={APropos} />
-          <Route path="/Panier" component={ShopContainer} /> 
-          <Route component={Error} />
+          <Route path="/Panier" component={ShopContainer}/> 
+          <React component={Error} />
         </Switch>
         < Footer />
       </div>
