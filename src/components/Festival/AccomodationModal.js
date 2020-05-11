@@ -15,7 +15,7 @@ const AccomodationModal = (props) => {
     let modalClass = isModalOpen ? 'modal' : 'modal closed';
 
     let available = [];
-    for(let i=1; i<accomodation.placeAvailable+1; i++) {
+    for(let i=1; i<Number(accomodation.placeAvailable)+1; i++) {
         available.push(i);
     }  
     
