@@ -7,6 +7,7 @@ import APropos from './components/APropos/APropos';
 import ShopContainer from './components/Panier/ShopContainer';
 import Footer from './components/Footer/Footer';
 import Festival from './components/Festival/Festival';
+import Error from './components/Error';
 import ScrollToTop from './components/ScrollTopTop';
 
 import {Switch, Route} from 'react-router-dom';
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/Artistes/:name" component ={Artist} />
           <Route path="/A-propos" component={APropos} />
           <Route path="/Panier" component={ShopContainer} /> 
+          <Route component={Error} />
         </Switch>
         < Footer />
       </div>
