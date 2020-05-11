@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import '../Festival/AccomodationModal.css';
 import './ShopModal.css';
-import arrow from '../../img/arrow.png'
+import arrow from '../../img/arrow.png';
+import logo from '../../img/logo-festit-name.png';
 
 const ShopModal = (props) => {
     const {totalPrice} = props;
@@ -13,6 +14,10 @@ const ShopModal = (props) => {
 
     let modalClass = isModalOpen ? 'modal' : 'modal closed';
 
+    
+    const [chosen, setChosen] = useState();
+
+    const cb = ['CB', 'VISA', 'MasterCard', 'American Express']
     const month = [1,2,3,4,5,6,7,8,9,10,11,12];
     let year = [2020, 2021, 2022];
 
@@ -33,23 +38,29 @@ const ShopModal = (props) => {
                     <button onClick={() => handleModalOpen()} className="modal__btn--close">
                         X
                     </button>
-                    <div className='desc-pay'>
-                        <div className='text-pay'>
-                            <p>Marchand</p>
-                            <p>Commande</p>
-                            <p>Montant</p>
-                        </div>
-                        <div className='text-pay item'>
-                            <p>FEST IT</p>
-                            <p>187766509</p>
-                            <p>{totalPrice} EUR</p>
+                    <div className='top-cart'>
+                        <img className="logo-pay" src={logo} alt='logo Fest It' />
+                        <div className='desc-pay'>
+                            <div className='text-pay'>
+                                <p>Marchand</p>
+                                <p>Commande</p>
+                                <p>Montant</p>
+                            </div>
+                            <div className='text-pay item'>
+                                <p>FEST IT</p>
+                                <p>187766509</p>
+                                <p>{totalPrice} EUR</p>
+                            </div>
                         </div>
                     </div>
                     <div className='allcb'>
-                        <div className='cb-pay'>CB</div>
-                        <div className='cb-pay'>VISA</div>
-                        <div className='cb-pay'>MasterCard</div>
-                        <div className='cb-pay'>American Express</div>
+                        {cb.map(t => (
+                            <div 
+                            active={t === chosen}
+                            className={t === chosen ? "day active" : "cb-pay"}
+                            onClick={() => setChosen(t)}
+                            >{t}</div>
+                        ))}
                     </div>
                     <form className='form-card' onSubmit={submitForm}>
                         <div className='form-data'>
