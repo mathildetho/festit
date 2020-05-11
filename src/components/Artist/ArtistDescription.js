@@ -5,23 +5,11 @@ import genreicon from '../../img/genre.png';
 
 
 const ArtistDescription =(props) => {
-    const {artist} = props;
-    console.log(artist.embed_video);
+    const {artist, genre} = props;
+ 
 
 
 return (
-//     <div className='ArtistDescription'>
-//         <img src= {artist.image_url}/>
-//         <p>{artist.name}</p>
-//         <p>{artist.tracker_count}</p>
-//         <div>{artist.music_url}</div>
-//         <p>{artist.description}</p>
-//         <p>{artist.country}</p>
-//         <iframe>{artist.embed_video}</iframe>
-        
-//     </div>
-// )}
-
 <div>
     <div className= 'text_desc'>
         <img src={icon} alt='icon' className='icon-title'/>
@@ -34,7 +22,7 @@ return (
                     src= {genreicon} 
                     alt='icon-genre'
                     />
-                <p>{artist.id_style}</p>
+                <p></p>
             </div>
             <p className='p-desc'>{artist.description}</p>
             
