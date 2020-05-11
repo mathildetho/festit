@@ -19,6 +19,8 @@
 
 #coverflow__arrow1__2X2XF .coverflow__arrow__IDi7v.coverflow__left__PhMc6, #coverflow__arrow1__2X2XF .coverflow__arrow__IDi7v.coverflow__right__1tzAF{
     display: none;
+    -moz-appearance: none;
+-webkit-appearance: none;
 }
 
 /* .coverflow__arrowWrapper__3qbYP {

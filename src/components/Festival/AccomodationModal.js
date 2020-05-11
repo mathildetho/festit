@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './AccomodationModal.css';
 import TicketModal from './TicketModal';
+import {ShopContext} from '../Panier/ShopContext';
 
 const AccomodationModal = (props) => {
     const {festival,accomodation} = props;
@@ -14,13 +15,32 @@ const AccomodationModal = (props) => {
     let modalClass = isModalOpen ? 'modal' : 'modal closed';
 
     let available = [];
-    for(let i=1; i<accomodation.placeAvailable+1; i++) {
+    for(let i=1; i<Number(accomodation.placeAvailable)+1; i++) {
         available.push(i);
     }  
     
+    const [quantity, setQuantity] = useState(1);
     const [price, setPrice] = useState(accomodation.passPrice);
     const handlePrice = (event) => {
-        setPrice(accomodation.passPrice*event)
+        setPrice(Number(accomodation.passPrice*event))
+        setQuantity(event)
+    }
+
+    const [cart, setCart] = useContext(ShopContext);
+    const addToCart = () => {
+        const item = {
+            name: accomodation.namePackage,
+            price:price,
+            description : accomodation.description,
+            city: festival.city,
+            country: festival.country,
+            image: accomodation.image1,
+            startDate: festival.startDate,
+            endDate:festival.endDate,
+            quantity: quantity
+            };
+        setCart(currentState => [...currentState, item]);
+        //prend en compte les autres items et en rajoute un nouveau
     }
 
     return (
@@ -47,14 +67,14 @@ const AccomodationModal = (props) => {
                                 (<>
                                     <div className='option-modal'>
                                         <div>
-                                        <h5>Quantité</h5>
-                                        <div className='select'>
-                                        <select onChange={(event) => handlePrice(event.target.value)}>
-                                            {available.map((place, index) => (
-                                                <option key={index} value={place}>{place}</option>
-                                            ))}
-                                        </select>
-                                        </div>
+                                            <h5>Quantité</h5>
+                                            <div className='select'>
+                                                <select onChange={(event) => handlePrice(event.target.value)}>
+                                                    {available.map((place, index) => (
+                                                        <option key={index} value={place}>{place}</option>
+                                                    ))}
+                                                </select>
+                                            </div>
                                         </div>
                                         <div>
                                             <h5>Prix du logement</h5>
@@ -66,10 +86,10 @@ const AccomodationModal = (props) => {
                                         </div>
                                         <div>
                                                 <h5>Prix Total</h5>
-                                                <p>{price}€</p>
+                                                <p>{Number(price)}€</p>
                                         </div>
                                     </div>
-                                    <button onClick={() => handleModalOpen()}>Ajouter au panier</button>
+                                    <button onClick={() => {addToCart();handleModalOpen();}} >Ajouter au panier</button>
                                     </>
                                 ) : (
                                     <>
@@ -79,7 +99,7 @@ const AccomodationModal = (props) => {
                                                 <p>{price}€</p>
                                         </div>
                                     </div>
-                                    <button>Ajouter au panier</button>
+                                    <button onClick={() => addToCart()}>Ajouter au panier</button>
                                     <TicketModal 
                                         festival={festival}
                                     />

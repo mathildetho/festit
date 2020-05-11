@@ -1,0 +1,241 @@
+.Panier {
+    width:100%;
+    background-color:#9185be;
+    background-image: url('../../img/confetti-01.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.Panier .icon-title {
+    width:2rem;
+    object-fit: contain;
+    margin-bottom: 3rem;
+}
+
+.container {
+    background-color: #f9b256;
+    width:80vw;
+    margin:auto;
+    border-radius: 30px;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+}
+
+.title {
+    display: flex;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2em;
+}
+.gif-cart {
+    border-radius: 30px;
+}
+
+/*Shoplist */
+.length-cart {
+    background-color: #fff;
+    padding: 1rem;
+    width: 50%;
+    margin: 1rem auto;
+    border-radius: 30px;
+}
+
+.content-shop {
+    display: flex;
+    flex-direction: column;
+    color: #9185be;
+    padding-bottom: 2rem;
+}
+
+.content-shop h4 {
+    font-weight: 600;
+    margin:0.9rem 0.5rem;
+}
+
+.icon-desc {
+    margin-right: 0.5rem;
+}
+.product-container {
+    background-color: #fff;
+    width:80%;
+    margin:auto;
+    border-radius: 50px;
+    display: flex;
+    margin: 1rem auto;
+}
+
+.img-product {
+    width:30%;
+    height: auto;
+    background-color: #9185be;
+    border-radius: 50px;
+    margin:3rem 0 3rem 3rem;
+    object-fit: cover;
+}
+
+.info-product {
+    margin: 3rem;
+    width:50%;
+}
+
+.title-product {
+    display: flex;
+    width:100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-product h4, .title-product p {
+    margin:0
+}
+
+.icon-product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon-date {
+    width:100%;
+    display:flex;
+    align-items: center;
+    margin: 0.5rem 0;
+}
+.icon-date p {
+    margin:0
+}
+
+.icon-product img {
+    widows: 1.5rem;
+    height: 1.5rem;
+    object-fit: contain;
+}
+
+.desc-product p {
+    font-size: 0.9rem;
+    text-align: left;
+    margin-bottom:0;
+}
+
+.choice-product {
+    display: flex;
+    align-items: center;
+}
+
+.choice-product p {
+    margin:0;
+    margin-right: 1rem;
+}
+
+.choice-product button {
+    border:none;
+    background-color: #f9b256;
+    border-radius: 30px;
+    padding: 0.2rem 0.5rem;
+}
+.choice-product button:hover {
+    cursor: pointer;
+}
+.choice-product img {
+    margin:auto
+}
+
+.total {
+    display: flex;
+    background-color: #9185be;
+    border-radius: 50px;
+    justify-content: space-around;
+    color: #fff;
+    width: 12rem;
+    float: right;
+    margin-top: 1rem;
+}
+
+.totalpay {
+    width:80%;
+    display: flex;
+    flex-direction: column;
+    margin:auto;
+    align-items: flex-end;
+}
+
+.total-all {
+    margin-right: 3rem;
+}
+
+.total-all h4 {
+    text-transform: uppercase;
+}
+
+.btn-pay {
+    margin-top:1rem;
+    margin-right: 3rem;
+    border: none;
+    background-color: #9185be;
+    border-radius:50px;
+    color:#fff;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    width: 10rem;
+    justify-content: space-around;
+    font: 500 1rem Poppins;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn-pay img {
+    width:1rem;
+    -webkit-transform: rotate(-90deg);
+   -moz-transform: rotate(-90deg);
+   -ms-transform: rotate(-90deg);
+   -o-transform: rotate(-90deg);
+   transform: rotate(-90deg);
+}
+
+.btn-pay:hover {
+    -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+  }
+
+
+@media (max-width:1190px) {
+    .title-product {
+        flex-direction: column;
+        text-align: left;
+        align-items: baseline;
+    }   
+}
+@media (max-width:900px) {
+    .product-container {
+        flex-direction: column;
+    }
+    .img-product {
+        margin: 3rem auto 0;
+        width:80%;
+        height: 20vh;
+    }
+    .info-product {
+        margin: 1rem auto;
+        width:70%
+    }
+}
+@media (max-width:800px) {
+    .length-cart, .gif-cart {
+        width: 80%
+    }
+}
+
+@media (max-width:640px) {
+    .total {
+        float: none;
+        margin: 1rem auto;
+    }
+}
+
+@media (max-width:410px) {
+    .total {
+        width:10rem
+    }
+}
