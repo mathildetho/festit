@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Footer.css";
-import {NavLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 import Logo from '../../img/logoFestIt.png'
 
@@ -41,10 +41,10 @@ class Footer extends React.Component {
                 </div>
                
                 <div className = "footer-content2">
-                    <NavLink to="/A-propos" className='footer-link'>À propos</NavLink>
-                    <a className='footer-link'>Mentions légales</a>
-                    <a className='footer-link'>Politique de confidentialité</a>
-                    <a className='footer-link'>@The Jackson Three Company | WCS | 2020</a>     
+                    <Link to="/A-propos" className='footer-link'>À propos</Link>
+                    <a className='footer-link' href='#'>Mentions légales</a>
+                    <a className='footer-link' href='#'>Politique de confidentialité</a>
+                    <a className='footer-link' href='#'>@The Jackson Three Company | WCS | 2020</a>     
                 </div>
                 
                 <div className= "footer-content3">
@@ -62,25 +62,22 @@ class Footer extends React.Component {
                     onMouseOut={this.handleMouseOut} 
                     src={this.state.imgfacebook} 
                     alt="facebook-logo" 
-                    class="social-logo"
+                    className="social-logo"
                     />     
                     <img
                         onMouseOver={this.handleMouseOver}
                         onMouseOut={this.handleMouseOut} 
                         src={this.state.imgtwitter}
                         alt="twitter-logo" 
-                        class="social-logo"
+                        className="social-logo"
                         />
                     <img 
                         onMouseOver={this.handleMouseOver}
                         onMouseOut={this.handleMouseOut} 
                         src={this.state.imginstagram}
                         alt="insta-logo" 
-                        class="social-logo"
+                        className="social-logo"
                         />
-              
-        
-                    
                 </div>
             </div>
             )

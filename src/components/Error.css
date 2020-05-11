@@ -1,0 +1,39 @@
+.error {
+    height:100vh;
+    width:100%;
+    background: center / 50% no-repeat url('../img/forme.png'), center /cover #9185be url('../img/patternFestIt.png');
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+}
+
+.error h2 {
+    font-size: 3rem;
+}
+.back {
+    margin: auto;
+    display: block;
+    border:none;
+    cursor: pointer;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    background: #fff;
+    border-radius: 30px;
+    box-sizing: border-box;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #9185be;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+    z-index: 2;
+}
+
+.back:hover {
+    color: #fff;
+    background: #9185be;
+    -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+}

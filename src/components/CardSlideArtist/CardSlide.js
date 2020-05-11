@@ -13,15 +13,15 @@ class CardSlide extends React.Component {
         displayArtist: ''
     }
     componentDidMount() {
-        axios.get('https://api-festival.herokuapp.com/api/artists')
+        axios.get('https://api-festit.herokuapp.com/api/artists')
         .then(response => response.data)
         .then(data => {
             this.setState({artists: data})
         })
     }
 
-    handleCard = (name) => {
-        this.props.history.push(`/Artists/${name}`)
+    handleCard = (id) => {
+        this.props.history.push(`/Artistes/${id}`)
     }
       
     render() {
@@ -59,8 +59,8 @@ class CardSlide extends React.Component {
         return (
             <div className='Container'>
                 {artists && <Slider {...settings}>
-                    {artists.filter(artist => artist).map((artist, index) => (
-                        <button className= "Slide" key= {index} onClick={() => this.handleCard(artist.name)}> 
+                    {artists.filter(artist => artist).map((artist) => (
+                        <button className= "Slide" key= {artist.idartist} onClick={() => this.handleCard(artist.idartist)}> 
                             <div className='artistCard'
                                  style={{ background: `center /cover no-repeat url('${artist.image_url}')` }}>
                                 <div className= 'artistCard-title'>
@@ -69,7 +69,7 @@ class CardSlide extends React.Component {
                                     alt='icon-titre'
                                     className='icon-titre'
                                 />
-                                <h5 className='artistCard-name'><bold>{artist.name}</bold></h5>
+                                <h5 className='artistCard-name'>{artist.name}</h5>
                                 </div>
                             </div>
                         </button>

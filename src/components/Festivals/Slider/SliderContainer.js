@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import Slider from "react-slick";
 import './SliderContainer.css';
+import { Link } from "react-router-dom";
 
 class SliderContainer extends React.Component {
   state = {
@@ -10,7 +11,7 @@ class SliderContainer extends React.Component {
 
   componentDidMount() {
     axios
-      .get("https://api-festival.herokuapp.com/api/festival")
+      .get("https://api-festit.herokuapp.com/api/festival")
       .then(res => res.data)
       .then(data => {
         this.setState({ festivals: data });
@@ -34,15 +35,15 @@ class SliderContainer extends React.Component {
 
     return (
         <Slider className='slidercontainer' {...settings} ref={slider => (this.slider = slider)}>
-          {festivals.slice(0, 3).map((festival, index) => (
-            <div className="slide" key={index}>
+          {festivals.slice(0, 3).map(festival => (
+            <div className="slide" key={festival.idfestival}>
               <img src={festival.image1} alt={festival.name} />
               <div className="inner">
                 <div className="name">
                   <span className="line" />
                   <h3>{festival.name}</h3>
                 </div>
-                <button className="button">En savoir plus</button>
+                <Link to={`/Festival/${festival.idfestival}`}><button className="button">En savoir plus</button></Link>
               </div>
             </div>
           ))}
