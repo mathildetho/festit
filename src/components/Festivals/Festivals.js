@@ -6,6 +6,11 @@ import axios from 'axios';
 
 const Festivals = (props,history) => {
 
+
+    // const [ filterLocations, setFilterLocations ] = useState([]);
+    // const [ filterDate, setFilterDate ] = useState([]);
+    // const [ filterGenre, setFilterGenre ] = usestate([]);
+
     //all festivals
     const [festivals, setFestivals] = useState([]);
     useEffect(() => {
@@ -39,9 +44,33 @@ const Festivals = (props,history) => {
             axios.get(`https://api-festit.herokuapp.com/api/festival/style/${genre}`)
             .then(response => response.data)
             .then(data => {
+                // filterLocations.length === 0 ? 
                 setFestivals(data)
+                // :
+                // setFilterGenre(data)
+                compareListFestivalFilter()
             })
         }
+
+    }
+
+    const compareListFestivalFilter = () => {
+        // filterLocations / filterDate / filterGenre
+
+
+        let newFilter = [];
+
+        // if (filterGenre.length !== 0) {
+
+        // }
+        
+
+        // filterLocation.map(festival => filterDate.map(festival2 => filterGenre.map(festival3 => )))
+
+
+        // setFestivals(newFilter)
+
+        
     }
 
 
