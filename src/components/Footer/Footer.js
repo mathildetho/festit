@@ -14,19 +14,35 @@ class Footer extends React.Component {
             
         };
 
-        this.handleMouseOver= this.handleMouseOver.bind(this);
-        this.handleMouseOut= this.handleMouseOut.bind(this);
+        this.handleMouseOverFb= this.handleMouseOverFb.bind(this);
+        this.handleMouseOutFb= this.handleMouseOutFb.bind(this);
+        this.handleMouseOverTw= this.handleMouseOverTw.bind(this);
+        this.handleMouseOutTw= this.handleMouseOutTw.bind(this);
+        this.handleMouseOverInsta= this.handleMouseOverInsta.bind(this);
+        this.handleMouseOutInsta= this.handleMouseOutInsta.bind(this);
     }
 
-    handleMouseOver() {
+    handleMouseOverFb() {
         this.setState({imgfacebook:require('../../img/facebookhover.png')})
+    }
+
+    handleMouseOutFb() {
+        this.setState({imgfacebook: require('../../img/facebook.png')})
+    }
+
+    handleMouseOverTw() {
         this.setState({imgtwitter:require('../../img/twitterhover.png')})
+    }
+
+    handleMouseOutTw() {
+        this.setState({imgtwitter: require('../../img/twitter.png')})
+    }
+
+    handleMouseOverInsta() {
         this.setState({imginstagram:require('../../img/instagramhover.png')})
     }
 
-    handleMouseOut() {
-        this.setState({imgfacebook: require('../../img/facebook.png')})
-        this.setState({imgtwitter: require('../../img/twitter.png')})
+    handleMouseOutInsta() {
         this.setState({imginstagram:require('../../img/instagram.png')})
     }
 
@@ -55,22 +71,22 @@ class Footer extends React.Component {
                     </button>
                     <p>Suivez-nous aussi sur</p>
                     <img 
-                    onMouseOver={this.handleMouseOver} 
-                    onMouseOut={this.handleMouseOut} 
+                    onMouseOver={() => this.handleMouseOverFb()} 
+                    onMouseOut={() => this.handleMouseOutFb()} 
                     src={this.state.imgfacebook} 
                     alt="facebook-logo" 
                     className="social-logo"
-                    />     
+                    />  
                     <img
-                        onMouseOver={this.handleMouseOver}
-                        onMouseOut={this.handleMouseOut} 
+                        onMouseOver={() => this.handleMouseOverTw()}
+                        onMouseOut={() => this.handleMouseOutTw()} 
                         src={this.state.imgtwitter}
                         alt="twitter-logo" 
                         className="social-logo"
                         />
                     <img 
-                        onMouseOver={this.handleMouseOver}
-                        onMouseOut={this.handleMouseOut} 
+                        onMouseOver={() => this.handleMouseOverInsta()}
+                        onMouseOut={() => this.handleMouseOutInsta()} 
                         src={this.state.imginstagram}
                         alt="insta-logo" 
                         className="social-logo"
