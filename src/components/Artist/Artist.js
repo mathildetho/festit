@@ -35,7 +35,6 @@ return (
                 artist= {artist}
                 // genre= {genre}
                 {...props}
-                
             />
         </div>
     </div>

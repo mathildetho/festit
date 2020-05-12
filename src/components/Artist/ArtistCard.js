@@ -19,8 +19,8 @@ const ArtistCard = (props) => {
             <ArtistDescription 
                 artist= {artist}
                 genre= {genre}
-                
-                />
+                {...props}
+            />
 
             <FestivalsContainer 
                 artist={artist}
