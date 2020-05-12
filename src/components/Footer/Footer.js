@@ -4,10 +4,6 @@ import {Link} from 'react-router-dom';
 
 import Logo from '../../img/logoFestIt.png'
 
-
-
-
-
 class Footer extends React.Component {
     constructor(props) {
         super(props)
@@ -21,30 +17,31 @@ class Footer extends React.Component {
         this.handleMouseOver= this.handleMouseOver.bind(this);
         this.handleMouseOut= this.handleMouseOut.bind(this);
     }
+
     handleMouseOver() {
         this.setState({imgfacebook:require('../../img/facebookhover.png')})
         this.setState({imgtwitter:require('../../img/twitterhover.png')})
         this.setState({imginstagram:require('../../img/instagramhover.png')})
     }
+
     handleMouseOut() {
         this.setState({imgfacebook: require('../../img/facebook.png')})
         this.setState({imgtwitter: require('../../img/twitter.png')})
         this.setState({imginstagram:require('../../img/instagram.png')})
     }
+
     render() {
         return(
-
             <div className = 'Footer'>
-                
                 <div className = "footer-content1">
                     <img className='footer-logo' src = { Logo } alt='footer logo'/>
                 </div>
                
                 <div className = "footer-content2">
                     <Link to="/A-propos" className='footer-link'>À propos</Link>
-                    <a className='footer-link' href='#'>Mentions légales</a>
-                    <a className='footer-link' href='#'>Politique de confidentialité</a>
-                    <a className='footer-link' href='#'>@The Jackson Three Company | WCS | 2020</a>     
+                    <a className='footer-link' href='null'>Mentions légales</a>
+                    <a className='footer-link' href='null'>Politique de confidentialité</a>
+                    <a className='footer-link' href='null'>@The Jackson Three Company | WCS | 2020</a>     
                 </div>
                 
                 <div className= "footer-content3">

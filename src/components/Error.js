@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import './Error.css';
-import logo from '../img/logoFestIt.png';
 
 const Error = () => {
      return (

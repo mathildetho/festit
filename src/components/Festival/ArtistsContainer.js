@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Coverflow from "react-coverflow";
-import { StyleRoot } from "radium";
 import axios from "axios";
 import Icon from "../../img/icon-titre.png";
 import "./ArtistsContainer.css";
@@ -17,11 +16,13 @@ const ArtistsContainer = (props) => {
         .then(data => {
           setArtists(data);
         });
-    }, []);
+    }, [props.match.params.idfestival]);
 
     const handleCardArtist = id => {
       props.history.push(`/Artistes/${id}`);
      };
+
+    console.log('artist',artists)
 
     return (
         <Coverflow

@@ -6,7 +6,7 @@ import name from '../../img/artist.png';
 import genre from '../../img/genre.png';
 
 function ArtistFilter(props) {
-    const {genres, filterGenre, names, filterName}= props;
+    const {artists, genres, filterGenre, names, filterName}= props;
 
     return (
         <>
@@ -25,6 +25,7 @@ function ArtistFilter(props) {
                             </option>
                             <ArtistFilterItem
                                 names={names}
+                                artists={artists}
                             />
                         </select>
                         </div>
