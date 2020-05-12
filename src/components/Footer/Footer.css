@@ -74,7 +74,6 @@ height: 120px;
     cursor: pointer;
     width: 40px;
     height: 40px;
-    margin-top: 10px;
     margin-right: 10px;
 }
 
@@ -83,6 +82,28 @@ height: 120px;
     text-align: center;
 }
 
+.footer-link a {
+    display:inline;
+    padding: 0 ;
+}
+
+.footer-content2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-content2 p {
+    padding: 0.5rem 1rem;
+    margin: 0;
+}
+
+.rs {
+    display: flex;
+}
+.rs a {
+    margin: 0;
+    padding:0
+}
 
 @media screen and (max-width: 1180px){
 
@@ -92,6 +113,9 @@ height: 120px;
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
+    }
+    .rs {
+        justify-content: center;
     }
     
 .footer-content2, .footer-content3 {
