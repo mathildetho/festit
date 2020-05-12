@@ -58,7 +58,7 @@ const Festivals = (props,history) => {
         // filterLocations / filterDate / filterGenre
 
 
-        let newFilter = [];
+        //let newFilter = [];
 
         // if (filterGenre.length !== 0) {
 

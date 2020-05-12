@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Coverflow from "react-coverflow";
-import { StyleRoot } from "radium";
 import axios from 'axios';
 import Icon from "../../img/icon-titre.png";
 import './FestivalsContainer.css'
@@ -10,7 +9,6 @@ import './FestivalsContainer.css'
      
       const [festivals, setFestivals]= useState([]);
 
-      console.log(props.match.params.name, "ok");
       useEffect(() => {
           const idArtist = props.match.params.id;
          axios
@@ -19,21 +17,17 @@ import './FestivalsContainer.css'
           .then(data => {
               setFestivals(data);
           });
-      }, []);
-
-   
-
-
+      }, [props.match.params.id]);
+      
     return(
-    <StyleRoot>
         <Coverflow
                 displayQuantityOfSide={2}
-                navigation
                 infiniteScroll
+                navigation={false}
+                enableHeading={false}
                 media={{
                   "@media (max-width: 900px)": {
-                    width: '50%',
-                    height: "300px"
+                    height: "30vh"
                   },
                   "@media (min-width: 900px)": {
                     width: "90%",
@@ -43,7 +37,7 @@ import './FestivalsContainer.css'
               >
           {festivals.map(festival => (
               
-                <div className="btn-coverflow">
+                <div className="btn-coverflow" key={festival.idfestival}>
                   <img className='img-artist' src={festival.image1} alt='artist' /> 
                   <div className="artist-name">
                     <img src={Icon} alt="icon-titre" className="icon-titre" />
@@ -53,7 +47,6 @@ import './FestivalsContainer.css'
               
           ))}
           </Coverflow>
-      </StyleRoot>
     );
 };
 export default FestivalsContainer;

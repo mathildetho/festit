@@ -12,8 +12,7 @@ const Artist = (props, history) => {
         .then(data => {
             setArtist(data[0])
         })
-    }, [])
-    console.log(props.match.params.id)
+    }, [props.match.params.id])
 
     //     const [genre, setGenre]= useState([])
 
