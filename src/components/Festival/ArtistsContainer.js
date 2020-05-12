@@ -19,8 +19,8 @@ const ArtistsContainer = (props) => {
         });
     }, []);
 
-    const handleCardArtist = name => {
-      props.history.push(`/Artistes/${name}`);
+    const handleCardArtist = id => {
+      props.history.push(`/Artistes/${id}`);
      };
 
     return (
@@ -41,7 +41,7 @@ const ArtistsContainer = (props) => {
               >
           {artists.map(artist => (
               
-                <div key={artist.idartist} className="btn-coverflow" onClick={() => handleCardArtist(artist.name)}>
+                <div key={artist.idartist} className="btn-coverflow" onClick={() => handleCardArtist(artist.idartist)}>
                   <img className='img-artist' src={artist.image_url} alt='artist' /> 
                   <div className="artist-name">
                     <img src={Icon} alt="icon-titre" className="icon-titre" />

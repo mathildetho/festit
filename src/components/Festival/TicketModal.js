@@ -16,27 +16,33 @@ const TicketModal = (props) => {
 
     const available = [1,2,3,4,5,6,7,8,9,10]
 
-    const [tickets, setTickets] = useState([]);
-    useEffect(() => {
-        axios.get(`https://api-festit.herokuapp.com/api/tickets/festivals/${festival.idfestival}`)
-            .then(res => res.data)
-            .then(data => {
-                setTickets(data)
-            })
-    }, [festival.idfestival])
+    // const [tickets, setTickets] = useState([]);
+    // useEffect(() => {
+    //     axios.get(`https://api-festit.herokuapp.com/api/festivals/${festival.idfestival}`)
+    //         .then(res => res.data)
+    //         .then(data => {
+    //             setTickets(data)
+    //         })
+    // }, [festival.idfestival])
 
     const [desc, setDesc] = useState();
     useEffect(() => {
-        setDesc(tickets.filter(ticket => ticket.type === 'Full Pass').map(ticket => ticket.description))
-     },[tickets])
-    const [price, setPrice] = useState([]);
+        setDesc('Le full pass vous permet d\'accéder à toutes les dates du festival.')
+    }, [festival])
+
+    const [price, setPrice] = useState();
     useEffect(() => {
-       setPrice(tickets.filter(ticket => ticket.type === 'Full Pass').map(ticket => ticket.price))
-    },[tickets])
+        setPrice(festival.priceFullPass)
+    }, [festival])
 
     const handlePrice = (e) => {
-        setPrice(tickets.filter(ticket => ticket.type === e).map(ticket => ticket.price))
-        setDesc(tickets.filter(ticket => ticket.type === e).map(ticket => ticket.description))
+        if (e == festival.priceFullPass) {
+            setDesc('Le full pass vous permet d\'accéder à toutes les dates du festival.')
+            setPrice(festival.priceFullPass)
+        } else {
+            setDesc('Le day passs vous donne accès au festival le jour de votre choix.')
+            setPrice(festival.priceDayPass)
+        }
     }
 
     const [quantity, setQuantity] = useState(1);
@@ -44,6 +50,7 @@ const TicketModal = (props) => {
     useEffect(() => {
         setPriceTotal(price)
      },[price])
+     
     const handlePriceTotal = (e) => {
         setPriceTotal(price*e)
         setQuantity(e)
@@ -94,7 +101,8 @@ const TicketModal = (props) => {
                                     <h5>Choix du pass</h5>
                                     <div className='select pass'>
                                     <select onChange={(event) => handlePrice(event.target.value)}>
-                                        {tickets.map(pass => <option key={pass.idticket} value={pass.type} >{pass.type}</option>)}
+                                        <option value={festival.priceFullPass}>Full Pass</option>
+                                        <option value={festival.priceDayPass}>Day Pass</option>
                                     </select>
                                     </div>
                                 </div>
