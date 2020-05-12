@@ -4,17 +4,23 @@ import location from '../../img/location.png';
 import genreicon from '../../img/genre.png';
 import date from '../../img/date.png';
 
-
 const Festival = (props) => {
     const {festival, genre} = props;
     const style = genre.map(element => Object.values(element)).join(', ');
     const startDate = new Date(festival.startDate)
     const endDate = new Date(festival.endDate)
 
+    const handlereturn = () => {
+        props.history.goBack()
+    }
+
     return(
         <div>
             <div className='text-desc' >
-                <img src={icon} alt='icon' className='icon-title' />
+                <div className='topdesc'>
+                    <img src={icon} alt='icon' className='icon-title' />
+                    <button className='return' onClick={() => handlereturn()}>Retour</button>
+                </div>
                 <div className='text-bloc' >
                     <h2 className='title-desc' >{festival.name}</h2>
                     <p className='p-desc'>{festival.description} </p>

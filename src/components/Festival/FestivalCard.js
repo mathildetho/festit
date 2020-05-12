@@ -16,6 +16,7 @@ const FestivalCard = (props) => {
             <FestivalDescription 
                 festival={festival} 
                 genre={genre}
+                {...props} 
             /> 
             <ArtistsContainer 
                 festival={festival}

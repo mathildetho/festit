@@ -80,7 +80,12 @@
       width:100%
   }
 
-  .button-ticket button {
+  .topdesc {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  .button-ticket button, .return  {
       border:none;
       cursor: pointer;
       -webkit-transition: all 0.2s ease;
@@ -101,6 +106,14 @@
     background: #9185be;
     -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
     filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+  }
+  .return:hover {
+    -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+  }
+  .return {
+      font-size:0.9rem;
+      padding:0.5rem
   }
 
 @media (max-width: 790px){
