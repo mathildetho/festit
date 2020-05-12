@@ -8,16 +8,8 @@ import Genre from '../../img/genre.png';
 
 class CardSlide extends React.Component {
     
-    state= {
-        artist : [],
-        displayArtist: ''
-    }
-    componentDidMount() {
-        axios.get('https://api-festit.herokuapp.com/api/artists')
-        .then(response => response.data)
-        .then(data => {
-            this.setState({artists: data})
-        })
+    constructor(props) {
+        super(props);
     }
 
     handleCard = (id) => {
@@ -40,6 +32,7 @@ class CardSlide extends React.Component {
                     breakpoint: 1180,
                     settings: {
                         slidesToShow: 3,
+                        slidesToScroll: 3,
                         dots: true
                     }
                 },
@@ -47,14 +40,22 @@ class CardSlide extends React.Component {
                     breakpoint: 650,
                     settings: {
                         slidesToShow: 2,
+                        slidesToScroll: 2,
                         dots: true
+                    },  
+                },
+                {
+                    breakpoint: 450,
+                    settings: {
+                      slidesToShow: 1,
+                      dots: true,
+                      slidesToScroll: 1
                     }
-                }
+                  }
             ]          
         };
 
-        const {artists} = this.state;
-
+        const {artists} = this.props;
 
         return (
             <div className='Container'>

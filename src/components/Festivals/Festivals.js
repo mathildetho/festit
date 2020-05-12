@@ -147,7 +147,7 @@ const Festivals = (props,history) => {
             <FestivalsContainer
                 {...props} 
                 festivals={festivals} 
-                />
+            />
         </div>
     )
 }
