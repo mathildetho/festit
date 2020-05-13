@@ -56,7 +56,7 @@ class CardSlide extends React.Component {
                         {artists.map((artist) => (
                             <button 
                                 className= "Slide" 
-                                key= {artist.idartist} 
+                                key={artist.idartist} 
                                 onClick={() => this.handleCard(artist.idartist)}
                             > 
                             <div 
@@ -65,7 +65,7 @@ class CardSlide extends React.Component {
                             >
                                 <div className= 'artistCard-title'>
                                     <img
-                                        src= { Icon }
+                                        src={Icon}
                                         alt='icon-titre'
                                         className='icon-titre'
                                     />
