@@ -85,13 +85,23 @@ const Artists = (props, history) => {
 
     const compareListArtistFilter = () => {
         let newFilter = [];
+        // if(filterNames.length !== 0) {
+        //     filterStyle.map(artist => filterNames.filter(artist2 => artist2.includes(artist) && newFilter.push(artist2)))
+        //     setArtists(newFilter)
+        // }
+        // if(filterStyle.length !== 0) {
+        //     filterNames.map(artist => filterStyle.filter(artist2 => artist2.includes(artist) && newFilter.push(artist2)))
+        //     setArtists(newFilter)
+        // }
         if(filterNames.length !== 0) {
-            filterStyle.map(artist => filterNames.map(artist2 => newFilter.push(artist2)))
+            filterStyle.map(artist => artist && filterNames.map(artist2 => artist == artist2 && newFilter.push(filterNames)))
             setArtists(newFilter)
+            console.log('filternames', newFilter)
         }
         if(filterStyle.length !== 0) {
-            filterNames.map(artist => filterStyle.map(artist2 => newFilter.push(artist2)))
+            filterNames.map(artist => artist && filterStyle.map(artist2 => artist == artist2 && newFilter.push(filterStyle)))
             setArtists(newFilter)
+            console.log('filterstyle', newFilter)
         }
     }
 

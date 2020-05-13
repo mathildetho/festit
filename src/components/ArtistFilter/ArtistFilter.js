@@ -10,7 +10,7 @@ function ArtistFilter(props) {
 
     return (
         <>
-            <h2 className="title-filter">Trouvez votre festival</h2>
+            <h2 className="title-filter">Trouvez votre artiste</h2>
             <div className= 'Filter'>
                 <div className='select location'>
                         <img className='icon-desc' src={name} alt='icon-location' />
