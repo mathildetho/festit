@@ -127,25 +127,28 @@ const Artists = (props, history) => {
         filterGenre()
     }, [])
 
-
+    // permet de comparer les 2 arrays filtres
     const compareArtistFiltered = async (data, nameFilter) => {
         let newArtists = [];
+        // si on touche au genre/name : filtre l'array des names/style et voit si le style/name fait parti de l'artiste ou non, push le résultat
+        // si ce n'est pas vide affiche l'artiste selon le genre/name sélectionné sinon, affiche un message sans artiste
         if(nameFilter === "genre" ){
             data.map(item =>  filterNames.filter(artist => artist.idartist === item.idartist).map(artist => newArtists.push(artist)))
             setArtists(newArtists)
-
-        }else {
+        } else {
             data.map(item =>  filterStyle.filter(artist => artist.idartist === item.idartist).map(artist => newArtists.push(artist)))
             setArtists(newArtists)
-
         }
         if(filterStyle.length === 0 && filterNames.length === 0) {
             setArtists(data)
         }
     }
 
+    //filtre en fonction du name
     const filterName = (name) => {
-        if(name === "Tous") {
+        //si on appuie sur tous et que genre et déjà sur Tous : mets tous les artistes
+        //sinon appel api en fonction du name sélectionné, met à jour la liste des artists avec que ce name, met à jour le filtre name et compare
+        if(name === "Tous" && filterStyle.length === 0) {
             refreshArtists()
         } else {
             axios.get(`https://api-festit.herokuapp.com/api/artists/${name}`)
@@ -154,15 +157,16 @@ const Artists = (props, history) => {
                     setArtists(data)
                     setFilterNames(data)
                     compareArtistFiltered(data, "name")
-
                 }
             )
         }  
     }
 
+    //filtre en fonction du name
     const filterGenre = (genre) => {
-
-        if(genre === "Tous") {
+        //si on appuie sur tous et que name et déjà sur Tous : mets tous les artistes
+        //sinon appel api en fonction du genre sélectionné, met à jour la liste des artists avec ce genre, met à jour le filtre style et compare
+        if(genre === "Tous" && filterNames.length === 0) {
             refreshArtists()
         } else {
             axios.get(`https://api-festit.herokuapp.com/api/artists/style/${genre}`)
@@ -171,15 +175,10 @@ const Artists = (props, history) => {
                     setArtists(data)
                     setFilterStyle(data)
                     compareArtistFiltered(data, "genre")
-
                 }
-            )
-            
+            ) 
         }
-
     }
-
-    console.log(filterStyle, filterNames)
     
     return (
         <div>
