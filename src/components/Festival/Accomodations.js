@@ -19,21 +19,37 @@ const Accomodations = props => {
     const accomodationNoAirbnb = accomodations.filter(accomodation => !accomodation.airbnb)
     const accomodationAirbnb = accomodations.filter(accomodation => accomodation.airbnb);
 
+    console.log('non',accomodationNoAirbnb)
+
     return(
-        <div className='accomodations'>
-                <AccomodationContainer 
-                title="Dormez au coeur de la fête (ticket compris)" 
-                accomodationNoAirbnb={accomodationNoAirbnb}
-                festival={festival}
+        <>
+            {accomodationNoAirbnb.length !== 0 ?
+                <div className='accomodations'>
+                    <AccomodationContainer 
+                    title="Dormez au coeur de la fête (ticket compris)" 
+                    accomodationNoAirbnb={accomodationNoAirbnb}
+                    festival={festival}
+                    />
+                    <AccomodationContainer 
+                    title="Le luxe à portée de main" 
+                    subtitle='En partenariat avec'
+                    img={airbnb}
+                    accomodationAirbnb={accomodationAirbnb}
+                    festival={festival}
+                    />
+                </div>
+                :
+                    <div className='accomodations'>
+                    <AccomodationContainer 
+                    title="Le luxe à portée de main" 
+                    subtitle='En partenariat avec'
+                    img={airbnb}
+                    accomodationAirbnb={accomodationAirbnb}
+                    festival={festival}
                 />
-                <AccomodationContainer 
-                title="Le luxe à portée de main" 
-                subtitle='En partenariat avec'
-                img={airbnb}
-                accomodationAirbnb={accomodationAirbnb}
-                festival={festival}
-                />
-        </div>
+                </div>
+            }
+        </>
     )
 }
 
