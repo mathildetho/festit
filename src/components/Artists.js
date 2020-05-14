@@ -127,71 +127,59 @@ const Artists = (props, history) => {
         filterGenre()
     }, [])
 
-    // filtre name
-    const filterName = async(name) => {
-        let newArtist;
-        if(filterStyle.length === 0) {
-            if(name === 'Tous') {
-                refreshArtists()
-                setFilterNames([])
-                
-                console.log('refresh artists', artists, 'names',filterNames)
-            } else {
-                await axios.get(`https://api-festit.herokuapp.com/api/artists/${name}`)
-                .then(response => response.data)
-                .then(data => newArtist=data) 
-                setArtists(newArtist)
-                setFilterNames(artists)
 
-                console.log('new',newArtist)
-                console.log('artists',artists)
-                console.log('name style=0',filterNames)
-            }
-        } else {
-            await axios.get(`https://api-festit.herokuapp.com/api/artists/${name}`)
-            .then(response => response.data)
-            .then(data => setFilterNames(data))
-            newArtist = filterStyle.map(artist => filterNames.filter(artist2 => artist.idartist === artist2.idartist ))
-            setArtists(newArtist)
+    const compareArtistFiltered = async (data, nameFilter) => {
+        let newArtists = [];
+        if(nameFilter === "genre" ){
+            data.map(item =>  filterNames.filter(artist => artist.idartist === item.idartist).map(artist => newArtists.push(artist)))
+            setArtists(newArtists)
 
-            console.log('name',filterNames)
-            console.log('style',filterStyle)
-            console.log('new',newArtist)
+        }else {
+            data.map(item =>  filterStyle.filter(artist => artist.idartist === item.idartist).map(artist => newArtists.push(artist)))
+            setArtists(newArtists)
+
+        }
+        if(filterStyle.length === 0 && filterNames.length === 0) {
+            setArtists(data)
         }
     }
 
-    //filtre genre
-    const filterGenre = async(genre) => {
-        let newArtist;
-        if(filterNames.length === 0) {
-            if(genre === 'Tous') {
-                refreshArtists()
-                setFilterStyle([])
-
-                console.log('refresh artists', artists, 'names',filterStyle)
-            } else {
-                await axios.get(`https://api-festit.herokuapp.com/api/artists/style/${genre}`)
-                .then(response => response.data)
-                .then(data => newArtist=data) 
-                setArtists(newArtist)
-                setFilterStyle(artists)
-
-                console.log('new',newArtist)
-                console.log('artists',artists)
-                console.log('name style=0',filterStyle)
-            }
+    const filterName = (name) => {
+        if(name === "Tous") {
+            refreshArtists()
         } else {
-            await axios.get(`https://api-festit.herokuapp.com/api/artists/style/${genre}`)
-            .then(response => response.data)
-            .then(data => setFilterStyle(data))
-            newArtist = filterName.map(artist => filterStyle.filter(artist2 => artist.idartist === artist2.idartist ))
-            setArtists(newArtist)
+            axios.get(`https://api-festit.herokuapp.com/api/artists/${name}`)
+                .then(response => response.data)
+                .then(data => {
+                    setArtists(data)
+                    setFilterNames(data)
+                    compareArtistFiltered(data, "name")
 
-            console.log('name',filterStyle)
-            console.log('style',filterStyle)
-            console.log('new',newArtist)
-        }
+                }
+            )
+        }  
     }
+
+    const filterGenre = (genre) => {
+
+        if(genre === "Tous") {
+            refreshArtists()
+        } else {
+            axios.get(`https://api-festit.herokuapp.com/api/artists/style/${genre}`)
+                .then(response => response.data)
+                .then(data => {
+                    setArtists(data)
+                    setFilterStyle(data)
+                    compareArtistFiltered(data, "genre")
+
+                }
+            )
+            
+        }
+
+    }
+
+    console.log(filterStyle, filterNames)
     
     return (
         <div>
