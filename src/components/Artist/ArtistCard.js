@@ -11,7 +11,7 @@ const ArtistCard = (props) => {
                 <div className= 'purpleop' />
                 <img 
                     className='img-desc'
-                    src={artist.image_url}
+                    src={artist && artist.image_url}
                     alt= 'img-artist'
                 />    
             </div>
@@ -25,7 +25,6 @@ const ArtistCard = (props) => {
             <FestivalsContainer 
                 artist={artist}
                 {...props}
-                 
             />  
             </div>
         </div>

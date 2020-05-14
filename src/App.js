@@ -30,7 +30,7 @@ const App = () => {
           <Route path="/Panier" component={ShopContainer}/> 
           <React component={Error} />
         </Switch>
-        < Footer />
+        <Footer />
       </div>
     </CartProvider>
   );

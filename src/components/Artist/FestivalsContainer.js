@@ -7,17 +7,21 @@ import './FestivalsContainer.css'
 
   const FestivalsContainer = (props) => {
      
-      const [festivals, setFestivals]= useState([]);
+    const [festivals, setFestivals]= useState([]);
 
-      useEffect(() => {
-          const idArtist = props.match.params.id;
-         axios
+    useEffect(() => {
+        const idArtist = props.match.params.id;
+        axios
           .get(`https://api-festit.herokuapp.com/api/artists/${idArtist}/festival`)
           .then(response=> response.data)
           .then(data => {
               setFestivals(data);
-          });
-      }, [props.match.params.id]);
+        });
+    }, []);
+
+    const handleCardFestival = name => {
+      props.history.push(`/Festival/${name}`);
+    };
       
     return(
         <Coverflow
@@ -37,7 +41,7 @@ import './FestivalsContainer.css'
               >
           {festivals.map(festival => (
               
-                <div className="btn-coverflow" key={festival.idfestival}>
+                <div className="btn-coverflow" key={festival.idfestival} onClick={() => handleCardFestival(festival.name)}>
                   <img className='img-artist' src={festival.image1} alt='artist' /> 
                   <div className="artist-name">
                     <img src={Icon} alt="icon-titre" className="icon-titre" />

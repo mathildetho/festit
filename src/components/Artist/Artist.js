@@ -14,30 +14,27 @@ const Artist = (props, history) => {
         })
     }, [props.match.params.id])
 
-    //     const [genre, setGenre]= useState([])
+    const [genre, setGenre]= useState([])
+    useEffect(() => {
+        const idArtist = props.match.params.id;
+        axios.get(`https://api-festit.herokuapp.com/api/artists/${idArtist}/style`)
+        .then(response => response.data)
+        .then(data => setGenre(data[0]))
+        })
 
-    //      useEffect(() => {
-    //          const idArtist = props.match.params.id;
-    //          axios.get(`https://api-festit.herokuapp.com/api/artist//id/${idArtist}/style`)
-    //          .then(response => response.data)
-    //          .the (data => {
-    //              setGenre(data)
-    //          })
-    //      })
-    //  };
+    console.log(genre)
 
+    return (
 
-return (
-
-    <div className ='apropos-artist'>
-        <div className='container'>
-            <ArtistCard 
-                artist= {artist}
-                // genre= {genre}
-                {...props}
-            />
+        <div className ='apropos-artist'>
+            <div className='container'>
+                <ArtistCard 
+                    artist= {artist}
+                    genre= {genre}
+                    {...props}
+                />
+            </div>
         </div>
-    </div>
 )
 }
 
