@@ -45,7 +45,7 @@ const Artists = (props, history) => {
     }, []);
 
 
-    // // filtres
+    // // filtres emeline 
     // // filtre name
     // const filterName = async (name) => {
     //     if(name === 'Tous') {
@@ -148,10 +148,10 @@ const Artists = (props, history) => {
                 console.log('name style=0',filterNames)
             }
         } else {
-            newArtist = filterStyle.map(artist => filterNames.filter(artist2 => artist.idartist === artist2.idartist ))
             await axios.get(`https://api-festit.herokuapp.com/api/artists/${name}`)
             .then(response => response.data)
             .then(data => setFilterNames(data))
+            newArtist = filterStyle.map(artist => filterNames.filter(artist2 => artist.idartist === artist2.idartist ))
             setArtists(newArtist)
 
             console.log('name',filterNames)
@@ -181,10 +181,10 @@ const Artists = (props, history) => {
                 console.log('name style=0',filterStyle)
             }
         } else {
-            newArtist = filterName.map(artist => filterStyle.filter(artist2 => artist.idartist === artist2.idartist ))
             await axios.get(`https://api-festit.herokuapp.com/api/artists/style/${genre}`)
             .then(response => response.data)
             .then(data => setFilterStyle(data))
+            newArtist = filterName.map(artist => filterStyle.filter(artist2 => artist.idartist === artist2.idartist ))
             setArtists(newArtist)
 
             console.log('name',filterStyle)
@@ -192,33 +192,6 @@ const Artists = (props, history) => {
             console.log('new',newArtist)
         }
     }
-
-    // const compareListArtistFilter = async(data) => {
-    //     //name
-    //     if(filterStyle.length === 0) {
-    //         // maj les artists directement + rajoute l'artiste sélectionné dans le filtre des noms
-    //         await setArtists(data)
-    //         setFilterNames(data)
-    //     } else {
-    //         // maj le filtre des noms et compare avec filtre genre puis maj les artists
-    //         await setFilterNames(data)
-    //         const newArtist = filterStyle.map(artist => filterNames.filter(artist2 => artist.idartist === artist2.idartist ))
-    //         await setArtists(newArtist)
-    //     }
-
-    //     //style
-    //     if (filterNames.length === 0) {
-    //         await setArtists(data)
-    //         setFilterStyle(data)
-    //     } else {
-    //         await setFilterNames(data)
-    //         const newArtist = filterNames.map(artist => filterStyle.filter(artist2 => artist.idartist === artist2.idartist ))
-    //         await setArtists(newArtist)
-    //     }
-    //     console.log('style', filterStyle)
-    //     console.log('name', filterNames)
-    // }
-
     
     return (
         <div>
