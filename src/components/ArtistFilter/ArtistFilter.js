@@ -17,7 +17,8 @@ function ArtistFilter(props) {
                         <div className='filter-title'>
                         <h4>Nom de l'artiste</h4>
                     
-                        <select onChange={(e) => filterName(e.target.value)} 
+                        <select 
+                            onChange={(e) => filterName(e.target.value)} 
                             className='festival-location'
                         >              
                             <option value="Tous">
@@ -36,11 +37,14 @@ function ArtistFilter(props) {
                     <div className='filter-title'>
                     <h4>Genre</h4>
                
-                <select onChange={(e) => filterGenre(e.target.value)} className='genre-list'>
+                <select 
+                    onChange={(e) => filterGenre(e.target.value)}
+                    className='genre-list'
+                >
                     <option value="Tous">Tous</option>
                     <ArtistFilterGenre 
                         genres={genres}
-                    />
+                />
                 </select>
                 </div>
             </div>

@@ -51,7 +51,7 @@ class CardSlide extends React.Component {
         const {artists} = this.props;
         return (
             <div className='Container'>
-                {artists.length >=1 ? (
+                {artists.length >0 ? (
                     <Slider {...settings}>
                         {artists.map((artist) => (
                             <button 
