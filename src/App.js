@@ -28,7 +28,7 @@ const App = () => {
           <Route path="/Artistes/:id" component ={Artist} />
           <Route path="/A-propos" component={APropos} />
           <Route path="/Panier" component={ShopContainer}/> 
-          <React component={Error} />
+          <Route component={Error} />
         </Switch>
         <Footer />
       </div>

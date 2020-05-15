@@ -22,8 +22,6 @@ const ArtistsContainer = (props) => {
       props.history.push(`/Artistes/${id}`);
      };
 
-    console.log('artist',artists)
-
     return (
         <Coverflow
                 displayQuantityOfSide={2}

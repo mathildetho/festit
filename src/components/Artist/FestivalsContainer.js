@@ -19,8 +19,8 @@ import './FestivalsContainer.css'
         });
     }, []);
 
-    const handleCardFestival = name => {
-      props.history.push(`/Festival/${name}`);
+    const handleCardFestival = id => {
+      props.history.push(`/Festival/${id}`);
     };
       
     return(
@@ -41,7 +41,7 @@ import './FestivalsContainer.css'
               >
           {festivals.map(festival => (
               
-                <div className="btn-coverflow" key={festival.idfestival} onClick={() => handleCardFestival(festival.name)}>
+                <div className="btn-coverflow" key={festival.idfestival} onClick={() => handleCardFestival(festival.idfestival)}>
                   <img className='img-artist' src={festival.image1} alt='artist' /> 
                   <div className="artist-name">
                     <img src={Icon} alt="icon-titre" className="icon-titre" />
