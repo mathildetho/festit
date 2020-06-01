@@ -10,6 +10,10 @@ const AboutLineUp = () => {
     const desc2 = 'Passionnée de TrashMetal et de Hardcore depuis sa plus tendre enfance, elle s’est ensuite tourné vers le dev';
     const desc3 = 'Après avoir assisté à un concert de Chantal Goya à l\'âge de 28 ans, Thomas décide de consacrer sa vie à la musique et au développement web.'
 
+    const link1 = 'https://www.linkedin.com/in/benoitgrand/';
+    const link2 = 'https://www.linkedin.com/in/mathilde-thoraninth/';
+    const link3 = 'https://www.linkedin.com/in/thomas-lachieze/'
+
     return(
         <div className='aboutcard' >
             <h3>La line-up</h3>
@@ -18,16 +22,19 @@ const AboutLineUp = () => {
                     imgsrc={ben} 
                     title='Benoit' 
                     desc={desc1}
+                    link={link1}
                     />
                 <AboutCard 
                     imgsrc={math} 
                     title='Mathilde'
                     desc={desc2}
+                    link={link2}
                     />
                 <AboutCard 
                     imgsrc={thom}
                     title='Thomas'
                     desc={desc3}
+                    link={link3}
                     />
             </div>
         </div>

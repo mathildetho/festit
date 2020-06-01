@@ -85,6 +85,16 @@
     object-fit: cover;
 }
 
+.text-card a {
+    justify-content: center;
+    background: #fff;
+    color: #f9b256;
+    font-size: 0.8rem;
+    border-radius: 30px;
+    width: 7rem;
+    margin: auto;
+    margin-top: 0.5rem;
+}
 
 @media (max-width:770px) {
     .cards {
