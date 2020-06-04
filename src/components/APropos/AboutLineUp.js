@@ -6,9 +6,9 @@ import thom from '../../img/thomas.png';
 import math from '../../img/mathilde.jpg';
 
 const AboutLineUp = () => {
-    const desc1 = 'Joueur de triangle pour l’orchestre  National de Roumanie de 1997 à 2002.';
-    const desc2 = 'Passionnée par le design et le web, c\'est tout naturellement qu\'elle se tourne vers le développement web.';
-    const desc3 = 'Après avoir assisté à un concert de Chantal Goya à l\'âge de 28 ans, Thomas décide de consacrer sa vie à la musique et au développement web.'
+    const desc1 = 'Après 8 ans dans le secteur bancaire, Benoît, par son appétit d\'apprendre, décide de se tourner vers ce qu\'il aime et devient développeur web front-end.';
+    const desc2 = 'Passionnée par le design et le web, c\'est tout naturellement qu\'elle se spécialise vers le développement web afin de faire d\'une pierre deux coups.';
+    const desc3 = 'Afin de libérer sa créativité et faire de son métier une passion, Thomas se convertit en tant que développeur web fullstack.'
 
     const link1 = 'https://www.linkedin.com/in/benoitgrand/';
     const link2 = 'https://www.linkedin.com/in/mathilde-thoraninth/';
