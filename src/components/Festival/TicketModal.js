@@ -13,16 +13,7 @@ const TicketModal = (props) => {
 
     let modalClass = isModalOpen ? 'modal' : 'modal closed';
 
-    const available = [1,2,3,4,5,6,7,8,9,10]
-
-    // const [tickets, setTickets] = useState([]);
-    // useEffect(() => {
-    //     axios.get(`https://api-festit.herokuapp.com/api/festivals/${festival.idfestival}`)
-    //         .then(res => res.data)
-    //         .then(data => {
-    //             setTickets(data)
-    //         })
-    // }, [festival.idfestival])
+    const available = [1,2,3,4,5,6,7,8,9,10];
 
     const [desc, setDesc] = useState();
     useEffect(() => {
@@ -54,7 +45,6 @@ const TicketModal = (props) => {
         setPriceTotal(price*e)
         setQuantity(e)
     }
-
 
     const [cart, setCart] = useContext(ShopContext);
     const addToCart = () => {

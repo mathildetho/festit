@@ -12,7 +12,7 @@ import './FestivalsContainer.css'
     useEffect(() => {
         const idArtist = props.match.params.id;
         axios
-          .get(`https://api-festit.herokuapp.com/api/artists/${idArtist}/festival`)
+          .get(`${process.env.REACT_APP_LOCALHOST}artists/${idArtist}/festival`)
           .then(response=> response.data)
           .then(data => {
               setFestivals(data);

@@ -5,12 +5,6 @@ import FestivalFilter from './FestivalFilter';
 import axios from 'axios';
 
 const Festivals = (props,history) => {
-
-
-    // const [ filterLocations, setFilterLocations ] = useState([]);
-    // const [ filterDate, setFilterDate ] = useState([]);
-    // const [ filterGenre, setFilterGenre ] = usestate([]);
-
     //all festivals
     const [festivals, setFestivals] = useState([]);
     useEffect(() => {
@@ -18,7 +12,7 @@ const Festivals = (props,history) => {
     }, [])
     
     const refreshFestivals = () => {
-        axios.get('https://api-festit.herokuapp.com/api/festival')
+        axios.get(`${process.env.REACT_APP_LOCALHOST}festival`)
         .then(response => response.data)
         .then(data => {
             setFestivals(data)
@@ -29,7 +23,7 @@ const Festivals = (props,history) => {
     // all genres
     const [genres, setGenres] = useState([])
     useEffect(() => {
-        axios.get('https://api-festit.herokuapp.com/api/style')
+        axios.get(`${process.env.REACT_APP_LOCALHOST}style`)
         .then(response => response.data)
         .then(data => {
             setGenres(data)
@@ -41,7 +35,7 @@ const Festivals = (props,history) => {
         if(genre === 'Tous') {
             refreshFestivals()
         } else {
-            axios.get(`https://api-festit.herokuapp.com/api/festival/style/${genre}`)
+            axios.get(`${process.env.REACT_APP_LOCALHOST}festival/style/${genre}`)
             .then(response => response.data)
             .then(data => {
                 // filterLocations.length === 0 ? 
@@ -79,7 +73,7 @@ const Festivals = (props,history) => {
     const  [location, setLocation] = useState([]);
 
     useEffect(() => {
-        axios.get('https://api-festit.herokuapp.com/api/festival')
+        axios.get('${process.env.REACT_APP_LOCALHOST}festival')
         .then(response => response.data)
         .then(data => data.map(festival => festival.country).sort())
         .then(data => {
@@ -92,7 +86,7 @@ const Festivals = (props,history) => {
         if(location ==="Partout") {
             refreshFestivals()
         } else {
-            axios.get(`https://api-festit.herokuapp.com/api/festival/country/${location}`)
+            axios.get(`${process.env.REACT_APP_LOCALHOST}festival/country/${location}`)
             .then(response => response.data)
             .then(data => {
                 setFestivals(data)
@@ -104,7 +98,7 @@ const Festivals = (props,history) => {
     //all dates
     const  [date, setDate] = useState([]);
     useEffect(() => {
-        axios.get('https://api-festit.herokuapp.com/api/festival')
+        axios.get(`${process.env.REACT_APP_LOCALHOST}festival`)
         .then(response => response.data)
         // .then(data => data.map(festival => {
         //     const startDate = new Date(festival.startDate)
@@ -123,7 +117,7 @@ const Festivals = (props,history) => {
         } else {
             // const year = festivals.filter(festival => festival.startDate.includes(date))
             // setFestivals(year)
-            axios.get(`https://api-festit.herokuapp.com/api/festival/date/${date}`)
+            axios.get(`${process.env.REACT_APP_LOCALHOST}festival/date/${date}`)
             .then(response => response.data)
             .then(data => {setFestivals(data)})
         }

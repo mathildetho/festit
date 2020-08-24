@@ -11,7 +11,7 @@ class SliderContainerArtists extends React.Component {
 
   componentDidMount() {
     axios
-      .get("https://api-festit.herokuapp.com/api/artists")
+      .get(`${process.env.REACT_APP_LOCALHOST}artists`)
       .then(res => res.data)
       .then(data => {
         this.setState({ artists: data });

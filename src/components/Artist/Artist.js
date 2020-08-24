@@ -7,7 +7,7 @@ const Artist = (props, history) => {
 
     useEffect(() => {
         const idArtist = props.match.params.id;
-        axios.get(`https:api-festit.herokuapp.com/api/artists/id/${idArtist}`)
+        axios.get(`${process.env.REACT_APP_LOCALHOST}artists/id/${idArtist}`)
         .then(response => response.data)
         .then(data => {
             setArtist(data[0])
@@ -17,7 +17,7 @@ const Artist = (props, history) => {
     const [genre, setGenre]= useState([])
     useEffect(() => {
         const idArtist = props.match.params.id;
-        axios.get(`https://api-festit.herokuapp.com/api/artists/${idArtist}/style`)
+        axios.get(`${process.env.REACT_APP_LOCALHOST}artists/${idArtist}/style`)
         .then(response => response.data)
         .then(data => setGenre(data[0]))
         })

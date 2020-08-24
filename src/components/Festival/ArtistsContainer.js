@@ -11,7 +11,7 @@ const ArtistsContainer = (props) => {
     useEffect(() => {
       const idfestival = props.match.params.idfestival;
       axios
-        .get(`https://api-festit.herokuapp.com/api/festival/${idfestival}/artists`)
+        .get(`${process.env.REACT_APP_LOCALHOST}festival/${idfestival}/artists`)
         .then(response => response.data)
         .then(data => {
           setArtists(data);

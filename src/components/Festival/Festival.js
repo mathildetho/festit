@@ -9,7 +9,7 @@ const Festival = (props, history) => {
 
     useEffect(() => {
         const idfestival = props.match.params.idfestival;
-        axios.get(`https://api-festit.herokuapp.com/api/festival/${idfestival}`)
+        axios.get(`${process.env.REACT_APP_LOCALHOST}festival/${idfestival}`)
         .then(response => response.data)
         .then(data => {
             setFestival(data[0])
@@ -20,7 +20,7 @@ const Festival = (props, history) => {
 
     useEffect(() => {
         const idfestival = props.match.params.idfestival;
-        axios.get(`https://api-festit.herokuapp.com/api/festival/${idfestival}/style`)
+        axios.get(`${process.env.REACT_APP_LOCALHOST}festival/${idfestival}/style`)
         .then(response => response.data)
         .then(data => {
             setGenre(data)

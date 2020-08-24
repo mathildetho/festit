@@ -9,7 +9,7 @@ const Accomodations = props => {
     const [accomodations, setAccomodations] = useState([]);
     useEffect(() => {
         const idfestival = props.match.params.idfestival;
-        axios.get(`https://api-festit.herokuapp.com/api/accomodation/festival/${idfestival}`)
+        axios.get(`${process.env.REACT_APP_LOCALHOST}accomodation/festival/${idfestival}`)
         .then(response => response.data)
         .then(data => {
             setAccomodations(data)

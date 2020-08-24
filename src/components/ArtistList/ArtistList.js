@@ -10,7 +10,7 @@ state = {
     artist: []
 }
 componentDidMount() {
-    axios.get('https://api-festit.herokuapp.com/api/artists')
+    axios.get(`${process.env.REACT_APP_LOCALHOST}artists`)
     .then(response => response.data)
     .then(data => {
         this.setState({artist: data})
