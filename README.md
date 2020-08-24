@@ -1,6 +1,6 @@
-## Project 2 - Festival 
+## Project 2 - Fest It 
 
-With developer Mathilde, Thomas L. and Benoît.
+With The Jackson three alias Benoit, Mathilde and Thomas.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

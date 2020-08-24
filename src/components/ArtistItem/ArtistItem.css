@@ -1,0 +1,50 @@
+.ArtistItem-container {
+
+    display: flex;
+    
+    
+    /*align-items: center;*/
+}
+
+.artist-card {
+
+    position: relative;
+    width: 200px;
+    height: 200px;
+    padding: 15px;
+    margin: 10px;
+    align-items: center;
+    border-radius: 15px;
+    font-size: 20px;
+    cursor: pointer;
+      
+}
+.artist-card::before {
+    content: "";
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: rgba(107, 92, 160, 0.6);
+    border-radius: 15px;
+    left:0;
+    bottom: 0;
+    cursor: pointer;
+    
+    
+}
+
+
+.card-title {
+    width: inherit;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    margin-top: -10px;
+}
+
+img {
+    object-fit: contain;
+}
+

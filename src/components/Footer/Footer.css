@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.Footer {
+    background-color: #9185be;
+    display: flex;
+    justify-content: space-between;
+    
+    
+    
+}
+
+.footer-content1 {
+    background-color: #f9b256;
+    align-items: center;
+    
+    
+    
+    
+} 
+.footer-content2, .footer-content3 {
+    text-align: left;
+    margin-right: 150px;
+    background-color: #9185be; 
+    justify-content: center;
+      
+}
+
+
+
+
+
+.footer-input {
+
+    border-radius: 20px;
+    padding: 14px;
+    outline: none;
+    border: none;
+    
+}
+.club-button {
+
+    cursor: pointer;    
+    background-color: #f9b256;
+    color: white;
+    border-radius: 20px;
+    height: 43px;
+    padding-bottom: 40px;
+    margin-left: -65px;
+    outline: none;
+    border: none;
+
+}
+.club-button:hover {
+    color: #f9b256;
+    background-color: #9185be;
+    border-radius: 20px;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.footer-logo {
+
+padding: 50px;
+width: 120px;
+height: 120px;
+
+}
+.social-logo {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.footer-link {
+
+    text-align: center;
+}
+
+.footer-link a {
+    display:inline;
+    padding: 0 ;
+}
+
+.footer-content2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-content2 p {
+    padding: 0.5rem 1rem;
+    margin: 0;
+}
+
+.rs {
+    display: flex;
+}
+.rs a {
+    margin: 0;
+    padding:0
+}
+
+@media screen and (max-width: 1180px){
+
+    .Footer {
+
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    .rs {
+        justify-content: center;
+    }
+    
+.footer-content2, .footer-content3 {
+
+    text-align: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+    
+    .footer-logo {
+        display: none;
+    }
+    .footer-content2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}
+@media screen and (max-width: 650px) {
+
+    .footer-link {
+       padding: 9px;
+    }
+}
+
+
+
+
+
